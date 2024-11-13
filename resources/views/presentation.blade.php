@@ -1,42 +1,6 @@
-<!--
-=========================================================
-* Material Kit 2 - v3.0.0
-=========================================================
-
-* Product Page:  https://www.creative-tim.com/product/material-kit 
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>
-    Material Kit 2 by Creative Tim
-  </title>
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-  <!-- Nucleo Icons -->
-  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <!-- CSS Files -->
-  <link id="pagestyle" href="./assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-</head>
-
-<body class="presentation-page bg-gray-200">
-  <!-- Navbar -->
-  <div class="container position-sticky z-index-sticky top-0">
+<x-layout>
+   <!-- Navbar -->
+   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
@@ -1529,156 +1493,7 @@
     </div>
     <!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
   </div>
-  <footer class="footer pt-5 mt-5">
-    <div class="container">
-      <div class=" row">
-        <div class="col-md-3 mb-4 ms-auto">
-          <div>
-            <a href="https://www.creative-tim.com/product/material-kit">
-              <img src="./assets/img/logo-ct-dark.png" class="mb-3 footer-logo" alt="main_logo">
-            </a>
-            <h6 class="font-weight-bolder mb-4">Material Kit 2</h6>
-          </div>
-          <div>
-            <ul class="d-flex flex-row ms-n3 nav">
-              <li class="nav-item">
-                <a class="nav-link pe-1" href="https://www.facebook.com/CreativeTim" target="_blank">
-                  <i class="fab fa-facebook text-lg opacity-8"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pe-1" href="https://twitter.com/creativetim" target="_blank">
-                  <i class="fab fa-twitter text-lg opacity-8"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pe-1" href="https://dribbble.com/creativetim" target="_blank">
-                  <i class="fab fa-dribbble text-lg opacity-8"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pe-1" href="https://github.com/creativetimofficial" target="_blank">
-                  <i class="fab fa-github text-lg opacity-8"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
-                  <i class="fab fa-youtube text-lg opacity-8"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-6 mb-4">
-          <div>
-            <h6 class="text-sm">Company</h6>
-            <ul class="flex-column ms-n3 nav">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/presentation" target="_blank">
-                  About Us
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/templates/free" target="_blank">
-                  Freebies
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/templates/premium" target="_blank">
-                  Premium Tools
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/blog" target="_blank">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-6 mb-4">
-          <div>
-            <h6 class="text-sm">Resources</h6>
-            <ul class="flex-column ms-n3 nav">
-              <li class="nav-item">
-                <a class="nav-link" href="https://iradesign.io/" target="_blank">
-                  Illustrations
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
-                  Bits & Snippets
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
-                  Affiliate Program
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-6 mb-4">
-          <div>
-            <h6 class="text-sm">Help & Support</h6>
-            <ul class="flex-column ms-n3 nav">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/contact-us" target="_blank">
-                  Contact Us
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center" target="_blank">
-                  Knowledge Center
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://services.creative-tim.com/?ref=ct-mk2-footer" target="_blank">
-                  Custom Development
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/sponsorships" target="_blank">
-                  Sponsorships
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
-          <div>
-            <h6 class="text-sm">Legal</h6>
-            <ul class="flex-column ms-n3 nav">
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/terms-of-service" target="_blank">
-                  Terms & Conditions
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/privacy-policy" target="_blank">
-                  Privacy Policy
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.creative-tim.com/license" target="_blank">
-                  Licenses (EULA)
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="text-center">
-            <p class="text-dark my-4 text-sm font-weight-normal">
-              All rights reserved. Copyright © <script>
-                document.write(new Date().getFullYear())
-              </script> Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <x-footer/>
   <!--   Core JS Files   -->
   <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
@@ -1697,6 +1512,7 @@
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="./assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script type="text/javascript">
     if (document.getElementById('state1')) {
       const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
@@ -1723,6 +1539,4 @@
       };
     }
   </script>
-</body>
-
-</html>
+</x-layout>
