@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('name');
-            $table->string('desc');
-            $table->string('status');
+            $table->string('description');
+            $table->timestamps();
+        });
 
-            // $table->timestamps();
-        })->charset('utf8mb4')->collation('utf8mb4_unicode_ci');
+        Schema::table('events', function(Blueprint $table){
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+        });
     }
 
     /**
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('events');
     }
 };

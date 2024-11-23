@@ -91,9 +91,9 @@
                 <img src="{{ asset('assets/images/pocari.jpg') }}" width="582" height="327" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">{{ $company->name }}</h2>
-                  <p class="pb-4 text-secondary">{{ $company->desc }}</p>
-                  <p class="h6 fw-5">{{ $company->status }}</p>
+                  <h2 class="fw-lighter">{{ $sponsor->name }}</h2>
+                  <p class="pb-4 text-secondary">{{ $sponsor->description }}</p>
+                  <p class="h6 fw-5">{{ $sponsor->email }}</p>
                   <a href="#" class="link-fancy link-fancy-light">Read more</a>
                 </div>
               </div>

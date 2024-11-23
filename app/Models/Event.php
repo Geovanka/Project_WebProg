@@ -4,15 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Event extends Model
 {
     //
-    protected $table = 'company';
+    protected $table = 'events';
     protected $fillable = [
+        'user_id',
         'name',
-        'desc',
-        'status'
+        'description'
     ];
-    
-    public $timestamps = false;
 }
