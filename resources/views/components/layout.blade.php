@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <!-- Flatpickr JS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
 
   <style>
     /* inter-300 - latin */
@@ -63,6 +64,9 @@
         url('{{ asset('assets/fonts/inter-v12-latin-700.woff') }}') format('woff');
     }
   </style>
+  
+
+
 </head>
 <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
     {{ $slot }}

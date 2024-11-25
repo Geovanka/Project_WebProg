@@ -8,7 +8,7 @@
             <div class="col-12">
               <h1 class="display-1 fw-bold mb-5">
                 <br>
-                Gojek 
+                {{$sponsor->name}} 
                 <!-- <br> -->
                 <br>
                 <!-- nama company -->
@@ -16,14 +16,14 @@
               <div class="row d-flex align-items-center">
 
                 <div class="col-12 col-lg-7">
-                  <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset('assets/images/gojek.jpg')}}" width="512" height="512"
+                  <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset($sponsor->image)}}" width="512" height="512"
                     alt="a nice person" loading="lazy" data-aos="zoom-in-right">
                     <br><br><br>
                 </div>
                 <div class="col-12 col-lg-5 bg-dark rounded-5 py-5" data-aos="fade">
-                  <span class="h5 text-secondary fw-lighter">Pasti Ada Jalan</span>
+                  <span class="h5 text-secondary fw-lighter">{{$sponsor->email}}</span>
                   <!-- tagline -->
-                  <h2 class="display-4 fs-4"> founded in 2010 with 20 motorbike drivers. Gojek app was launched in January 2015.</h2>
+                  <h2 class="display-4 fs-4"> {{$sponsor->description}}</h2>
 
                 </div>
               <br>
@@ -41,7 +41,7 @@
           download>
           <small>Download Proposal</small>
         </a>
-        <a href="{{ url('/company') }}" aria-label="Download this template"
+        <a href="{{ url('/submission') }}" aria-label="Download this template"
           class="btn btn-outline-light">
           <small>Submit Proposal</small>
         </a>

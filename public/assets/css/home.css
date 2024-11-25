@@ -82,3 +82,24 @@ input::placeholder, textarea::placeholder {
     margin-left: 2.5px;
     color: white;
 }
+
+.admintitle{
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.adminCard{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.addSponsor{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.reglogbar{
+    background-color: white;
+}
