@@ -19,14 +19,26 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function addevent(){
+    public function addevent(Request $request){
+
+        // dd($request->all());
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            // 'date' => 'required|date',
+            // 'location' => 'required|string|max:800'
+        ]);
 
         $user = User::where('name', $request->name)->first();
 
-        $user->event()->create([
-            'event' => $request->event
-        ]);
+        if ($user) {
+            $user->event()->create([
+                'name' => $request->name,
+                'description' => $request->description
+            ]);
+        } 
 
-        return redirect()->back();
+        return view('eventform');
     }
 }

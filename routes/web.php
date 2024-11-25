@@ -11,6 +11,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/eventform', [ProfileController::class, 'addevent']);
 
+Route::get('/showeventform', function(){
+    return view('eventform');
+});
+
 Route::get('/profile', function(){
     return view('profile');
 });

@@ -11,3 +11,11 @@
     font-size: 0.65rem; /* Adjust the value as needed */
 }  
 
+.desc{
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.cards{
+    background-color: none;
+}

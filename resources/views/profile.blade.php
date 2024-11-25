@@ -161,7 +161,7 @@
       </div>
     </div>
 
-    <a href="/eventform" aria-label="Add Event"
+    <a href="/showeventform" aria-label="Add Event"
           class="btn btn-outline-light">
           <small>Add Event</small>
     </a>
