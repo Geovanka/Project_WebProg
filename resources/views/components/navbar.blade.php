@@ -29,7 +29,7 @@
         </li>
 
       </ul>
-      <a href="" aria-label="Download this template"
+      <a href="{{ url('/company') }}" aria-label="Download this template"
         class="btn btn-outline-light">
         <small>Find Sponsor</small>
       </a>
