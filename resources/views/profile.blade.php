@@ -7,118 +7,26 @@
           <div class="row">
             <div class="col-12">
               <h1 class="display-3 fw-bold">{{ $user->name }}</h1>
-              <p class="lead border-top pt-5 mt-5" data-aos="fade-up">{{ $user->email }}</p>
+              <p class="profile" data-aos="fade-up">{{ $user->email }}</p>
+              <span class="h3 text-secondary fw-lighter">Events</span>
             </div>
           </div>
         </div>
-        <!-- <div class="row">
-          <div class="col-12 py-vh-2">
-            <img src="img/webp/abstract18.webp" width="1446" height="982" alt="abstract image"
-              class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-up">
-          </div>
-        </div> -->
         @foreach($events as $e)
-        <div class="col-12 col-lg-10 col-xl-8">
-          <div class="row d-flex align-items-start" data-aos="fade-right">
-            <div class="col-12 col-lg-7">
-              <h2 class="h3 mt-5 border-top pt-5">{{ $e->name }}</h2>
-              <p class="text-secondary">{{ $e->description }}</p>
-            </div>
-            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">{{ $e->date }}</h3>
-              <p class="text-secondary">{{ $e->location }}</p>
+          <div class="col-12 col-lg-10 col-xl-8">
+            <div class="row d-flex align-items-start" data-aos="fade-right">
+              <div class="col-12 col-lg-7">
+                <h2 class="h3 mt-5 border-top pt-5">{{ $e->name }}</h2>
+                <p class="text-secondary">{{ $e->description }}</p>
+              </div>
+              <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+                <h3 class="h6">{{ $e->date }}</h3>
+                <p class="text-secondary">{{ $e->location }}</p>
+              </div>
             </div>
           </div>
         @endforeach
 
-          <!-- <div class="row d-flex align-items-start" data-aos="fade-right">
-            <div class="col-12 col-lg-7">
-              <h2 class="h3 mt-5 border-top pt-5">02. Lorem ipsum</h2>
-              <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita
-                kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat.</p>
-            </div>
-            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">tl;dr</h3>
-              <p class="text-secondary">
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet
-              </p>
-            </div>
-          </div>
-          <div class="row d-flex align-items-start" data-aos="fade-right">
-            <div class="col-12 col-lg-7">
-              <h2 class="h3 mt-5 border-top pt-5">03. Dolor sitam est
-              </h2>
-              <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita
-                kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat.</p>
-            </div>
-            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">tl;dr</h3>
-              <p class="text-secondary">
-                Et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>
-            </div>
-          </div>
-          <div class="row d-flex align-items-start" data-aos="fade-right">
-            <div class="col-12 col-lg-7">
-              <h2 class="h3 mt-5 border-top pt-5">04. Eirmod tempor invidunt</h2>
-              <p class="text-secondary">Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                ea rebum. Stet clita kasd gubergren, no
-                sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat.</p>
-            </div>
-            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">tl;dr</h3>
-              <p class="text-secondary">
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                amet
-              </p>
-            </div>
-          </div>
-          <div class="row d-flex align-items-start" data-aos="fade-right">
-            <div class="col-12 col-lg-7">
-              <h2 class="h3 mt-5 border-top pt-5">05. Lorem ipsum</h2>
-              <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita
-                kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                erat.</p>
-            </div>
-            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">tl;dr</h3>
-              <p class="text-secondary">
-                Eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
         <div class="col-12 col-lg-10 col-xl-9">
           <div class="p-5 small bg-gray-900">
@@ -135,7 +43,7 @@
               Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat.</p>
           </div>
-        </div> -->
+        </div> 
       </div>
     </div>
 
