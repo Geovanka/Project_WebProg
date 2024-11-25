@@ -11,7 +11,7 @@
             <h1 class="display-huge mt-3 mb-3 lh-1">Sponsor Made Easy</h1>
           </div>
           <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p>
+            <!-- <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p> -->
           </div>
           <div class="col-12 text-center">
             <a href="#" class="btn btn-xl btn-light">Explore
@@ -50,11 +50,10 @@
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
-            <span class="h5 text-secondary fw-lighter">What we do</span>
-            <h2 class="display-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
+            <span class="h5 text-secondary fw-lighter">Sponsors</span>
+            <h2 class="display">Check out our sponsor</h2>
           </div>
-          <div class="col-12 col-lg-5" data-aos="fade-left">
+          <!-- <div class="col-12 col-lg-5" data-aos="fade-left">
             <h3 class="pt-5">Easy Proposal Approval</h3>
             <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
@@ -75,50 +74,56 @@
                   d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
               </svg>
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 
     <div class="bg-black py-vh-3">
+      <div class="container bg-black px-vw-3 py-vh-3 rounded-5 shadow">
+        <div class="row gx-5">
+          @foreach($sponsor as $s)
+          <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card bg-transparent" data-aos="zoom-in-up" style="height: 630px;">
+              <div class="bg-dark shadow rounded-5 p-0 h-100 d-flex flex-column">
+                <img src="{{ asset('assets/images/pocari.jpg') }}" width="582" height="327" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="flex-grow-1" style="padding: 2.4rem;">
+                  <h2 class="fw-lighter multi-line-truncate" style="height: 85px; font-size:23px;">{{ $s->name }}</h2>
+                  <p class="pb-4 text-secondary" style="height: 145px; font-size:16px; overflow: hidden;">{{ $s->description }}</p>
+                  <p class="email-text">{{ $s->email }}</p>
+                  <a href="#" class="link-fancy link-fancy-light" style="font-size:15px">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="bg-black py-vh-3">
       <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
         <div class="row gx-5">
-          <div class="col-12 col-md-6">
-
-            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
+          <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
                 <img src="{{ asset('assets/images/pocari.jpg') }}" width="582" height="327" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">{{ $sponsor->name }}</h2>
-                  <p class="pb-4 text-secondary">{{ $sponsor->description }}</p>
-                  <p class="h6 fw-5">{{ $sponsor->email }}</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{asset('assets/images/nu.jpeg')}}" width="582" height="442" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">{{ $sponsor->name }}</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <h2 class="fw-lighter">Ipsum dolor est</h2>
+                  <p class="pb-4 text-secondary"></p>
+                  <p class="h6 fw-5"></p>
                   <a href="#" class="link-fancy link-fancy-light">Read more</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6">
-            <div class="p-5 pt-0 mt-5" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">Company List</span>
-              <h2 class="display-4">Check out these companies!</h2>
-            </div>
-            <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
+
+          <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{asset('assets/images/gojek.jpg')}}" width="582" height="390" alt="abstract image"
+                <img src="{{asset('assets/images/nu.jpeg')}}" width="582" height="327" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
                   <h2 class="fw-lighter">Ipsum dolor est</h2>
@@ -128,7 +133,28 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="p-5 pt-0 mt-5" data-aos="fade">
+              <span class="h5 text-secondary fw-lighter">Company List</span>
+              <h2 class="display-4">Check out these companies!</h2>
+            </div>
+            <div class="card bg-transparent" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img src="{{asset('assets/images/gojek.jpg')}}" width="582" height="327" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Ipsum dolor est</h2>
+                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3 mb-4">
             <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
                 <img src="{{asset('assets/images/traveloka.png')}}" width="582" height="327" alt="abstract image"
@@ -144,7 +170,7 @@
           </div>
           
         </div>
-      </div>
+      </div> -->
 
     </div>
     <div class="bg-dark position-relative">

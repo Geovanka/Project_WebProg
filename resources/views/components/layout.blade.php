@@ -13,6 +13,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>UKM WebProg Project</title>
   <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 
   <style>
     /* inter-300 - latin */

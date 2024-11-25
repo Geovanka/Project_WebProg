@@ -1,0 +1,13 @@
+.multi-line-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits the text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}  
+
+.email-text {
+    font-size: 0.65rem; /* Adjust the value as needed */
+}  
+

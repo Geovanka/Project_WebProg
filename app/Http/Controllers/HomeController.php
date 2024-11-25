@@ -14,7 +14,7 @@ class HomeController extends Controller
         // $company = Company::all();
         // $company = Company::first();
 
-        $sponsor = Sponsor::first();
+        $sponsor = Sponsor::all();
 
         // $sponsorsInPairs = $sponsors->chunk(2);
 
