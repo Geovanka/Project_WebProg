@@ -8,14 +8,13 @@
         <div class="row d-flex align-items-center justify-content-center py-vh-5">
           <div class="col-12 col-xl-10">
             <span class="h5 text-secondary fw-lighter">Our Mission</span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">We do ordinary stuff for cool people</h1>
+            <h1 class="display-huge mt-3 mb-3 lh-1">Sponsor Made Easy</h1>
           </div>
           <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">We are some sort of DAO working with AI, NFT´s, web 4.0 and the so called
-              blockchain...in the Metaverse. You don´t understand a word? No problem, we neither!</p>
+            <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p>
           </div>
           <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Join us
+            <a href="#" class="btn btn-xl btn-light">Explore
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -33,7 +32,7 @@
         <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
         <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
           <div class="col-12 col-lg-6">
-            <img src="img/webp/abstract18.webp" width="2280" height="1732" alt="abstract image"
+            <img src="{{ asset('assets/images/Logo_Binus_White.png') }}" width="180" height="1732" alt="abstract image"
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
@@ -56,7 +55,7 @@
               invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
           </div>
           <div class="col-12 col-lg-5" data-aos="fade-left">
-            <h3 class="pt-5">Product Design & Strategy</h3>
+            <h3 class="pt-5">Easy Proposal Approval</h3>
             <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
               <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
@@ -66,7 +65,7 @@
                   d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
               </svg>
             </p>
-            <h3 class="border-top border-secondary pt-5 mt-5">Development & Engineering</h3>
+            <h3 class="border-top border-secondary pt-5 mt-5">Independent Agreement</h3>
             <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
               <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
@@ -101,10 +100,10 @@
 
             <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract2.webp" width="582" height="442" alt="abstract image"
+                <img src="{{asset('assets/images/nu.jpeg')}}" width="582" height="442" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
+                  <h2 class="fw-lighter">{{ $sponsor->name }}</h2>
                   <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
                   <a href="#" class="link-fancy link-fancy-light">Read more</a>
@@ -119,7 +118,7 @@
             </div>
             <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract17.webp" width="582" height="390" alt="abstract image"
+                <img src="{{asset('assets/images/gojek.jpg')}}" width="582" height="390" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
                   <h2 class="fw-lighter">Ipsum dolor est</h2>
@@ -132,7 +131,7 @@
 
             <div class="card bg-transparent" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <img src="img/webp/abstract4.webp" width="582" height="327" alt="abstract image"
+                <img src="{{asset('assets/images/traveloka.png')}}" width="582" height="327" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
                   <h2 class="fw-lighter">Ipsum dolor est</h2>
@@ -143,6 +142,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
@@ -152,7 +152,7 @@
         <div class="row d-flex align-items-center">
 
           <div class="col-12 col-lg-7">
-            <img class="img-fluid rounded-5 mb-n5 shadow" src="img/webp/person9.webp" width="512" height="512"
+            <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset('assets/images/gojek.jpg')}}" width="512" height="512"
               alt="a nice person" loading="lazy" data-aos="zoom-in-right">
             <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="img/webp/person11.webp" width="512" height="512"
               alt="another nice person" loading="lazy" data-aos="zoom-in-up">

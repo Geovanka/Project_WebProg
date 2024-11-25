@@ -16,11 +16,16 @@ class HomeController extends Controller
 
         $sponsor = Sponsor::first();
 
+        // $sponsorsInPairs = $sponsors->chunk(2);
+
         // dd($company);
         // return view('home', [
         //     'company' => $company
         // ]);
 
+        // return view('home', [
+        //     'sponsor' => $sponsor->chunk(2),
+        // ]);
         return view('home', [
             'sponsor' => $sponsor
         ]);
