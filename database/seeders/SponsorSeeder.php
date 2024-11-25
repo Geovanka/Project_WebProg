@@ -26,7 +26,7 @@ class SponsorSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => bcrypt('password'),
                 'description' => $faker->paragraph,
-                'image'=>'public/assets/images/sponsors/'.$faker->image('public/assets/images/sponsors', 400, 300, 'drinks', false),
+                'image'=>'assets/images/sponsors/'.$faker->image('public/assets/images/sponsors', 400, 300, 'drinks', false),
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
