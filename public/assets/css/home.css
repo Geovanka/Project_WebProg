@@ -64,3 +64,7 @@ input::placeholder, textarea::placeholder {
 .profile{
     padding-bottom: 30px;
 }
+
+.submitButton{
+    position: center;
+}
