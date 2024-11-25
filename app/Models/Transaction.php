@@ -15,4 +15,18 @@ class Transaction extends Model
         'status'
     ];
 
+    public function sponsors()
+    {
+        return $this->belongsTo(Sponsor::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsTo(Event::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -12,11 +12,17 @@ class Sponsor extends Model
         'name',
         'email',
         'password',
-        'description'
+        'description',
+        'image'
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
