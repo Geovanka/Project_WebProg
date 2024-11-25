@@ -13,7 +13,7 @@
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
         <li class="nav-item">
-          <a class="nav-link fs-5" href="{{ url('/') }}" aria-label="Homepage">
+          <a class="nav-link fs-5" href="{{ url('/home') }}" aria-label="Homepage">
             Home
           </a>
         </li>

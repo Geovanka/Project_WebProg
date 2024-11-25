@@ -39,7 +39,7 @@
 
                 <!-- Display validation errors if any -->
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" style="color: #ED4337;">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -50,7 +50,7 @@
 
                 <!-- Display flash error message -->
                 @if(session('error'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" style="color: #ED4337;">
                         {{ session('error') }}
                     </div>
                 @endif
