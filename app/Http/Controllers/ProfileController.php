@@ -21,10 +21,12 @@ class ProfileController extends Controller
 
     public function addevent(){
 
-        $user = User::where('username', $request->username)->first();
+        $user = User::where('name', $request->name)->first();
 
-        $user->tweets()->create([
-            'tweet' => $request->tweet
+        $user->event()->create([
+            'event' => $request->event
         ]);
+
+        return redirect()->back();
     }
 }
