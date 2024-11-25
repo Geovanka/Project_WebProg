@@ -27,8 +27,19 @@
             Login
           </a>
         </li>
-
       </ul>
+
+      <form action="/search" class="d-flex me-3" role="search">
+        <div class="input-group">
+          <div class="form-outline">
+            <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </div>
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+
       <a href="{{ url('/inbox') }}" aria-label="Download this template"
         class="btn btn-outline-light">
         <small>Find Sponsor</small>

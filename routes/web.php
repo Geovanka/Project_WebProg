@@ -28,6 +28,8 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
+Route::get('/search', [HomeController::class, 'search'])->name('search');
+
 Route::get('/company', function(){
     return view('company');
 });
