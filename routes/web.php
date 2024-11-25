@@ -28,6 +28,7 @@ Route::get('/profile', function(){
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
+
 Route::post('register', [RegisterController::class, 'register']);
 
 Route::get('/company', function(){
@@ -37,6 +38,7 @@ Route::get('/company', function(){
 Route::get('/inbox', function(){
     return view('inbox');
 });
+
 Route::get('/admin', function(){
     return view('admin');
 })->name('admin.dashboard');
