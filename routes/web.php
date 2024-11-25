@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -35,6 +36,9 @@ Route::get('/company', function(){
 Route::get('/inbox', function(){
     return view('inbox');
 });
-Route::get('/admin', function(){
-    return view('admin');
-})->name('admin.dashboard');
+
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
+Route::get('/showsponsorform', function(){
+    return view('sponsorform');
+});;
