@@ -100,3 +100,6 @@ input::placeholder, textarea::placeholder {
     margin-top: 20px;
 }
 
+.reglogbar{
+    background-color: white;
+}
