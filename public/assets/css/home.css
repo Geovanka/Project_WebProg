@@ -12,10 +12,51 @@
 }  
 
 .desc{
-    padding-top: 80px;
-    padding-bottom: 50px;
+    /* padding-top: 30px; */
+    padding-bottom: 25px;
+    font-size: 30px;
 }
 
 .cards{
     background-color: none;
+}
+
+input.form-control, textarea.form-control {
+    font-family: 'Inter';
+    font-size: 18px;
+}
+
+
+input::placeholder, textarea::placeholder {
+    font-family: 'Inter';
+    font-size: 15px;
+}
+
+.goback{
+    display: inline-block;
+    padding-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.back{
+    display: inline-block;
+    padding-left: 25px;
+    padding-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.backs{
+    display: inline-block;
+    padding-left: 5px;
+    padding-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.backs:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
 }

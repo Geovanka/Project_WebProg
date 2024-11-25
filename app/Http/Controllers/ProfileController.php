@@ -26,19 +26,22 @@ class ProfileController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
-            // 'date' => 'required|date',
-            // 'location' => 'required|string|max:800'
+            'date' => 'required|date',
+            'location' => 'required|string|max:800'
         ]);
 
-        $user = User::where('name', $request->name)->first();
+        // ini ngambil the current logged in user
+        $user = auth()->user();
 
         if ($user) {
             $user->event()->create([
-                'name' => $request->name,
-                'description' => $request->description
+                'name' => $validated['name'],
+                'description' => $validated['description'], 
+                'date' => $validated['date'], 
+                'location' => $validated['location']
             ]);
         } 
 
-        return view('eventform');
+        return redirect()->route('profile');
     }
 }
