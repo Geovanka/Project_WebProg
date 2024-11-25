@@ -23,3 +23,7 @@ Route::get('/login', function(){
 Route::get('/company', function(){
     return view('company');
 });
+
+Route::get('/inbox', function(){
+    return view('inbox');
+});
