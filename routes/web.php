@@ -32,6 +32,9 @@ Route::get('/company', function(){
     return view('company');
 });
 
+Route::get('/inbox', function(){
+    return view('inbox');
+});
 Route::get('/admin', function(){
     return view('admin');
 })->name('admin.dashboard');
