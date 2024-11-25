@@ -19,12 +19,29 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function addevent(){
+    public function addevent(Request $request){
 
-        $user = User::where('username', $request->username)->first();
+        // dd($request->all());
 
-        $user->tweets()->create([
-            'tweet' => $request->tweet
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+            'date' => 'required|date',
+            'location' => 'required|string|max:800'
         ]);
+
+        // ini ngambil the current logged in user
+        $user = auth()->user();
+
+        if ($user) {
+            $user->event()->create([
+                'name' => $validated['name'],
+                'description' => $validated['description'], 
+                'date' => $validated['date'], 
+                'location' => $validated['location']
+            ]);
+        } 
+
+        return redirect()->route('profile');
     }
 }

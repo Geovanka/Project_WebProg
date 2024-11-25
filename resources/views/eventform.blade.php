@@ -1,50 +1,50 @@
 <x-layout>
-    <form action="/eventform" method="POST">
-    <div class="row mb-3">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3">
+    <div class="d-flex flex-row align-items-left">
+        <span class="back">&lt;</span>
+        <a href="/profile" class="backs">back</a>
+    </div>
+
+    <div class="d-flex flex-column align-items-center gap-4">
+        <h3 class="desc">Add your event! Fill in the details!</h3>
+        <div class="cards">
+            <div class="card-body">
+                <form action="/eventform" method="POST">
+                @csrf
+                    <div class="row mb-3">
+                        <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="eventName" name="eventName" placeholder="Enter Event Name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="eventDate" class="col-sm-2 col-form-label">Event Date (D-Day)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="eventDate" name="eventDate" placeholder="mm/dd/yyyy">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="eventDescription" class="col-sm-2 col-form-label">Event Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="eventDescription" name="eventDescription" rows="5" placeholder="Enter event description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="eventLocation" class="col-sm-2 col-form-label">Event Location</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="eventLocation" name="eventLocation" rows="3" placeholder="Enter event Location"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Event</button>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3">
-        </div>
-    </div>
-    <fieldset class="row mb-3">
-        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-        <div class="col-sm-10">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-            <label class="form-check-label" for="gridRadios1">
-            First radio
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-            <label class="form-check-label" for="gridRadios2">
-            Second radio
-            </label>
-        </div>
-        <div class="form-check disabled">
-            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-            <label class="form-check-label" for="gridRadios3">
-            Third disabled radio
-            </label>
-        </div>
-        </div>
-    </fieldset>
-    <div class="row mb-3">
-        <div class="col-sm-10 offset-sm-2">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1">
-            <label class="form-check-label" for="gridCheck1">
-            Example checkbox
-            </label>
-        </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
+
+    <script>
+        flatpickr("#eventDate", {
+            dateFormat: "m/d/Y", 
+            placeholder: "mm/dd/yyyy", 
+        });
+    </script>
 </x-layout>

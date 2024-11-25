@@ -161,6 +161,11 @@
       </div>
     </div>
 
+    <a href="/showeventform" aria-label="Add Event"
+          class="btn btn-outline-light">
+          <small>Add Event</small>
+    </a>
+    
   </main>
   
   <x-footer/>

@@ -86,7 +86,7 @@
           <div class="col-12 col-md-4 col-lg-3 mb-4">
             <div class="card bg-transparent" data-aos="zoom-in-up" style="height: 630px;">
               <div class="bg-dark shadow rounded-5 p-0 h-100 d-flex flex-column">
-                <img src="{{ asset('assets/images/pocari.jpg') }}" width="582" height="327" alt="abstract image"
+                <img src="{{ asset($s->image) }}" width="582" height="327" alt="{{asset($s->image)}}"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="flex-grow-1" style="padding: 2.4rem;">
                   <h2 class="fw-lighter multi-line-truncate" style="height: 85px; font-size:23px;">{{ $s->name }}</h2>
@@ -168,7 +168,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div> -->
 

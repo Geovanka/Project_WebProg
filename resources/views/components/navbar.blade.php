@@ -23,7 +23,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="{{ url('/login') }}" aria-label="A system message page">
+          <a class="nav-link fs-5" href="{{ url('/') }}" aria-label="A system message page">
             Login
           </a>
         </li>

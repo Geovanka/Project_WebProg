@@ -12,7 +12,7 @@
     <meta name="author" content="Holger Koenemann">
     <meta name="generator" content="Eleventy v2.0.0">
     <meta name="HandheldFriendly" content="true">
-    <title>Login</title>
+    <title>Register a new account</title>
     <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
   </head>
 
@@ -35,48 +35,39 @@
             </header>
 
             <main class="mb-auto col-12">
-              <h1>Login to your account</h1>
+                <h1>Register a new account</h1>
 
-                <!-- Display validation errors if any -->
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+                <form class="row" action="/register" method="POST">
+                    @csrf
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Organization Name</label>
+                            <input type="text" name="name" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" name="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1" required>
+                        </div>
+
+                        <div>
+                            <a href="/" style="color: #FFFFFF">Already have an account? Login</a>
+                        </div>
+
+                        <div class="mb-3 form-check py-3">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">If you really don´t want any newsletter <strong>check this box</strong>. Then you just agree to receive our marketing mails and product stuff. If you check this box <strong>we will not send out our newsletter</strong> to you at all...on mondays.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
                     </div>
-                @endif
-
-                <!-- Display flash error message -->
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-
-              <form class="row" action="/login" method="POST">
-                @csrf
-                <div class="col-12">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" name="email" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{old('email')}}">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control form-control-lg bg-gray-800 border-dark" id="exampleInputPassword1">
-                </div>
-                <div>
-                    <a href="/register" style="color: #ffffff">Create an account...</a>
-                </div>
-                <div class="mb-3 form-check py-3">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">If you really don´t want any newsletter <strong>check this box</strong>. Then you just agree to receive our marketing mails and product stuff. If you check this box <strong>we will not send out our newsletter</strong> to you at all...on mondays.</label>
-                </div>
-                <button type="submit" class="btn btn-white btn-xl mb-4">Submit</button>
-              </div>
-              </form>
+                </form>
 
             </main>
           </div>
