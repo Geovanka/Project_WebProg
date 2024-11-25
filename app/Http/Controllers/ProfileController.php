@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,12 @@ class ProfileController extends Controller
 
     public function profile(Request $request){
 
-        $user = User::all();
+        $user = auth()->user();
+        $events = $user->events;
 
         return view('profile', [
-            'user' -> $user
+            'user' => $user,
+            'events' => $events
         ]);
     }
 
@@ -31,13 +34,15 @@ class ProfileController extends Controller
         ]);
 
         // ini ngambil the current logged in user
+        $eventDate = Carbon::createFromFormat('m/d/Y', $validated['date'])->format('Y-m-d');
         $user = auth()->user();
+        // dd($user);
 
         if ($user) {
-            $user->event()->create([
+            $user->events()->create([
                 'name' => $validated['name'],
                 'description' => $validated['description'], 
-                'date' => $validated['date'], 
+                'date' => $eventDate, 
                 'location' => $validated['location']
             ]);
         } 
