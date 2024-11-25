@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SponsorPageController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -52,3 +53,8 @@ Route::get('/submission', function(){
 Route::get('/submission', [SponsorPageController::class, 'userData']);
 
 Route::post('/transaction', [TransactionController::class, 'store']);
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
+Route::get('/showsponsorform', function(){
+    return view('sponsorform');
+});;

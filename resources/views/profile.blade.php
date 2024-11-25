@@ -12,20 +12,24 @@
             </div>
           </div>
         </div>
-        @foreach($events as $e)
-          <div class="col-12 col-lg-10 col-xl-8">
-            <div class="row d-flex align-items-start" data-aos="fade-right">
-              <div class="col-12 col-lg-7">
-                <h2 class="h3 mt-5 border-top pt-5">{{ $e->name }}</h2>
-                <p class="text-secondary">{{ $e->description }}</p>
-              </div>
-              <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-                <h3 class="h6">{{ $e->date }}</h3>
-                <p class="text-secondary">{{ $e->location }}</p>
+        @if($events && $events->count() > 0)
+          @foreach($events as $e)
+            <div class="col-12 col-lg-10 col-xl-8">
+              <div class="row d-flex align-items-start" data-aos="fade-right">
+                <div class="col-12 col-lg-7">
+                  <h2 class="h3 mt-5 border-top pt-5">{{ $e->name }}</h2>
+                  <p class="text-secondary">{{ $e->description }}</p>
+                </div>
+                <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+                  <h3 class="h6 text-secondary"><i class="fa-solid fa-calendar-days"></i>{{ $e->date }}</h3>
+                  <p class="text-secondary"><i class="fa-solid fa-location-dot"></i>{{ $e->location }}</p>
+                </div>
               </div>
             </div>
-          </div>
-        @endforeach
+          @endforeach
+        @else
+          <p class="text-secondary text-center mt-5">No events found.</p>
+        @endif
 
       <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
         <div class="col-12 col-lg-10 col-xl-9">
@@ -45,12 +49,13 @@
           </div>
         </div> 
       </div>
-    </div>
 
-    <a href="/showeventform" aria-label="Add Event"
-          class="btn btn-outline-light">
+      <a href="/showeventform" aria-label="Add Event"
+          class="btn btn-outline-light submitButton">
           <small>Add Event</small>
-    </a>
+      </a>
+
+    </div>
     
   </main>
   
