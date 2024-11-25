@@ -13,25 +13,25 @@
                     <div class="row mb-3">
                         <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="eventName" name="eventName" placeholder="Enter Event Name">
+                            <input class="form-control" type="text" id="eventName" name="name" placeholder="Enter Event Name">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="eventDate" class="col-sm-2 col-form-label">Event Date (D-Day)</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="eventDate" name="eventDate" placeholder="mm/dd/yyyy">
+                            <input type="text" class="form-control" id="eventDate" name="date" placeholder="mm/dd/yyyy">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="eventDescription" class="col-sm-2 col-form-label">Event Description</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="eventDescription" name="eventDescription" rows="5" placeholder="Enter event description"></textarea>
+                            <textarea class="form-control" id="eventDescription" name="description" rows="5" placeholder="Enter event description"></textarea>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="eventLocation" class="col-sm-2 col-form-label">Event Location</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="eventLocation" name="eventLocation" rows="3" placeholder="Enter event Location"></textarea>
+                            <textarea class="form-control" id="eventLocation" name="location" rows="3" placeholder="Enter event Location"></textarea>
                         </div>
                     </div>
                     
