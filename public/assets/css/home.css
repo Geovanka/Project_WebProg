@@ -60,3 +60,7 @@ input::placeholder, textarea::placeholder {
     cursor: pointer;
     color: white;
 }
+
+.profile{
+    padding-bottom: 30px;
+}
