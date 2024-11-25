@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sponsor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -19,16 +20,21 @@ class AdminController extends Controller
     }
 
     public function addSponsor(Request $request){
-        $validated = $request->validate([
+
+        $validatedData = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'description' => 'required|string|max:1000',
-            'email' => 'requred|email'
+            'email' => 'required|email',
+            'password' => 'required|min:8'
         ]);
 
-        sponsor()->create([
-            'name' => $validated['name'],
-            'description' => $validated['description'], 
-            'email' => $validated['email']
+        if ($validatedData->fails()){
+            return redirect()->back()->withErrors($validatedData)->withInput();
+        }
+
+        $newSponsor = Sponsor::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'email' => $request->email
         ]);
 
         return redirect()->route('admin');

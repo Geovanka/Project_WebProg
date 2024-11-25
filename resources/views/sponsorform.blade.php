@@ -11,15 +11,21 @@
                 <form action="/sponsorform" method="POST">
                 @csrf
                     <div class="row mb-3">
+                        <label for="sponsorName" class="col-sm-2 col-form-label">Upload Brand Image</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" name="image" type="file" id="sponsorName" placeholder="Enter Event Name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="sponsorName" class="col-sm-2 col-form-label">Sponsor Name</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="sponsorName" name="image" placeholder="Enter Event Name">
+                            <input class="form-control" name="name" type="text" id="sponsorName" placeholder="Enter Event Name">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="sponsorLocation" class="col-sm-2 col-form-label">Sponsor Email</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="email" id="sponsoremail" name="email"placeholder="Enter Sponsor Location">
+                            <input class="form-control" type="email" id="sponsorEmail" name="email" placeholder="Enter Sponsor Location">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -28,7 +34,7 @@
                             <textarea class="form-control" id="sponsorDescription" name="description" rows="5" placeholder="Enter sponsor description"></textarea>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Sponsor</button>
                 </form>
             </div>

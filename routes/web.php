@@ -38,7 +38,7 @@ Route::get('/inbox', function(){
 });
 
 // ADMIN DASHBOARD
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
 Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
 Route::get('/showsponsorform', function(){
     return view('sponsorform');

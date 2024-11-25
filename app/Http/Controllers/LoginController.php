@@ -49,7 +49,7 @@ class LoginController extends Controller
         if ($admin){
             if($request->password == $admin->password){
                 Auth::login($admin);
-                return redirect()->intended('admin.dashboard');
+                return redirect()->intended('admin');
             }
         }
 
