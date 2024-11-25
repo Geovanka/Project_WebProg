@@ -22,10 +22,13 @@ class SponsorSeeder extends Seeder
             # code...
             DB::table('sponsors')->insert([
                 'name' => $faker->company,
-                'email' => $faker->unique()->safeEmail,
-                'description' => $faker->paragraph,
+                'email' => $faker->unique()->companyEmail,
+                'email_verified_at' => now(),
                 'password' => bcrypt('password'),
-                'email_verified_at' => now()
+                'description' => $faker->paragraph,
+                'image'=>'public/assets/images/sponsors/'.$faker->image('public/assets/images/sponsors', 400, 300, 'drinks', false),
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
     }

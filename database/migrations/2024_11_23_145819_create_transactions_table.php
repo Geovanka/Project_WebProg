@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('sponsor_id');
-            $table->string('user_id');
-            $table->string('event_id');
+
+            $table->unsignedBigInteger('sponsor_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('event_id');
+
+            $table->foreign('sponsor_id')->references('id')->on('sponsors')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->string('status');
             $table->timestamps();
         });
