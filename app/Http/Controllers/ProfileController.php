@@ -14,7 +14,7 @@ class ProfileController extends Controller
     public function profile(Request $request){
 
         $user = auth()->user();
-        $events = $user->events;
+        $events = $user?->events;
 
         return view('profile', [
             'user' => $user,

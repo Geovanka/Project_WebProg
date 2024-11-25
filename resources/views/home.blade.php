@@ -92,7 +92,8 @@
                   <h2 class="fw-lighter multi-line-truncate" style="height: 85px; font-size:23px;">{{ $s->name }}</h2>
                   <p class="pb-4 text-secondary" style="height: 145px; font-size:16px; overflow: hidden;">{{ $s->description }}</p>
                   <p class="email-text">{{ $s->email }}</p>
-                  <a href="#" class="link-fancy link-fancy-light" style="font-size:15px">Read more</a>
+                  <a href="{{ route('sponsor.show', ['id' => $s->id]) }}" class="link-fancy link-fancy-light" style="font-size:15px">Read more</a>
+
                 </div>
               </div>
             </div>
