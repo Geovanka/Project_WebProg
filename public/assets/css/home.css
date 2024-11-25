@@ -67,4 +67,18 @@ input::placeholder, textarea::placeholder {
 
 .submitButton{
     position: center;
+    max-width: 150px;
+    margin-bottom: 40px;
+}
+
+.fa-calendar-days{
+    margin-right: 8px;
+    margin-left: 1px;
+    color: white;
+}
+
+.fa-location-dot{
+    margin-right: 8px;
+    margin-left: 2.5px;
+    color: white;
 }

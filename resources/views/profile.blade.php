@@ -21,8 +21,8 @@
                   <p class="text-secondary">{{ $e->description }}</p>
                 </div>
                 <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-                  <h3 class="h6">{{ $e->date }}</h3>
-                  <p class="text-secondary">{{ $e->location }}</p>
+                  <h3 class="h6 text-secondary"><i class="fa-solid fa-calendar-days"></i>{{ $e->date }}</h3>
+                  <p class="text-secondary"><i class="fa-solid fa-location-dot"></i>{{ $e->location }}</p>
                 </div>
               </div>
             </div>
