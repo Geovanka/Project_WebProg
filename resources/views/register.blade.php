@@ -37,6 +37,23 @@
             <main class="mb-auto col-12">
                 <h1>Register a new account</h1>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger" style="color: #ED4337;">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <!-- Display flash error message -->
+                @if(session('error'))
+                    <div class="alert alert-danger" style="color: #ED4337;">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
                 <form class="row" action="/register" method="POST">
                     @csrf
                     <div class="col-12">

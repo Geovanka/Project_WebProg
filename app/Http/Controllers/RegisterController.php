@@ -37,11 +37,12 @@ class RegisterController extends Controller
                 'email'=>$request->email,
                 'password'=> Hash::make($request->password)
             ]);
-        } else {
 
+            return redirect()->route('landing');
+        } else {
+            return redirect()->back()->with('error', '* Email already registered...');
         }
 
-        return redirect()->route('landing');
 
     }
 }
