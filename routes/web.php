@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 // LANDING PAGE (LOGIN)
@@ -32,12 +33,13 @@ Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::get('/sponsorPage', function(){
     return view('sponsorPage');
 })->name('sponsor.dashboard');
-
 Route::get('/inbox', function(){
     return view('inbox');
 });
 
 // ADMIN DASHBOARD
-Route::get('/admin', function(){
-    return view('admin');
-})->name('admin.dashboard');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
+Route::get('/showsponsorform', function(){
+    return view('sponsorform');
+});;

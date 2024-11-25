@@ -11,7 +11,7 @@
                 <form action="/eventform" method="POST">
                 @csrf
                     <div class="row mb-3">
-                        <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
+                        <label for="eventName" class="col-sm-2 col-form-label">Sponsor Image</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" id="eventName" name="name" placeholder="Enter Event Name">
                         </div>
