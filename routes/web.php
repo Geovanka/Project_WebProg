@@ -15,15 +15,13 @@ Route::get('/', function(){
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/eventform', [ProfileController::class, 'addevent']);
+Route::post('/eventform', [ProfileController::class, 'addevent']);
 
 Route::get('/showeventform', function(){
     return view('eventform');
 });
 
-Route::get('/profile', function(){
-    return view('profile');
-});
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
@@ -34,6 +32,9 @@ Route::get('/company', function(){
     return view('company');
 });
 
+Route::get('/inbox', function(){
+    return view('inbox');
+});
 Route::get('/admin', function(){
     return view('admin');
 })->name('admin.dashboard');

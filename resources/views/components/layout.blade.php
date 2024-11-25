@@ -14,6 +14,10 @@
   <title>UKM WebProg Project</title>
   <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <style>
     /* inter-300 - latin */

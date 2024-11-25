@@ -11,7 +11,7 @@
             <h1 class="display-huge mt-3 mb-3 lh-1">Sponsor Made Easy</h1>
           </div>
           <div class="col-12 col-xl-8">
-            <!-- <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p> -->
+            <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p>
           </div>
           <div class="col-12 text-center">
             <a href="#" class="btn btn-xl btn-light">Explore

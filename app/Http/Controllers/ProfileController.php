@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,12 @@ class ProfileController extends Controller
 
     public function profile(Request $request){
 
-        $user = User::all();
+        $user = auth()->user();
+        $events = $user->events;
 
         return view('profile', [
-            'user' -> $user
+            'user' => $user,
+            'events' => $events
         ]);
     }
 
@@ -26,19 +29,24 @@ class ProfileController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
-            // 'date' => 'required|date',
-            // 'location' => 'required|string|max:800'
+            'date' => 'required|date',
+            'location' => 'required|string|max:800'
         ]);
 
-        $user = User::where('name', $request->name)->first();
+        // ini ngambil the current logged in user
+        $eventDate = Carbon::createFromFormat('m/d/Y', $validated['date'])->format('Y-m-d');
+        $user = auth()->user();
+        // dd($user);
 
         if ($user) {
-            $user->event()->create([
-                'name' => $request->name,
-                'description' => $request->description
+            $user->events()->create([
+                'name' => $validated['name'],
+                'description' => $validated['description'], 
+                'date' => $eventDate, 
+                'location' => $validated['location']
             ]);
         } 
 
-        return view('eventform');
+        return redirect()->route('profile');
     }
 }
