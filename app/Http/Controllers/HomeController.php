@@ -26,4 +26,14 @@ class HomeController extends Controller
             'sponsor' => $sponsor
         ]);
     }
+
+    public function search(Request $request){
+        $query = $request->search;
+
+        $sponsor = Sponsor::where('name', 'like', '%' . $query . '%')
+                            ->orWhere('email', 'like', '%' . $query . '%')
+                            ->get();
+        
+        return view('searchResult', compact('sponsor'));
+    }
 }

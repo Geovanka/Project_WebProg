@@ -27,8 +27,43 @@
             Login
           </a>
         </li>
-
       </ul>
+
+      <!-- <form action="/search" class="d-flex me-3" role="search">
+        <div class="input-group">
+          <div class="form-outline">
+            <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </div>
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form> -->
+
+      <!-- <form action="/search" class="d-flex me-3" role="search">
+      <div class="container justify-content-center">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="input-group mb-3">
+              <input type="search" class="form-control input-text" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-warning btn-lg" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>        
+        </div>
+      </div>
+      </form> -->
+
+      <form action="/search" class="d-flex me-3" role="search">
+            <div class="input-group" style="display: flex; align-items: center; border-right: none; border-radius: 5px 0 0 5px;">
+                <input name="search" class="form-control" style="border-radius: 0;" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning" style="border-radius: 0;" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+
       <a href="{{ url('/inbox') }}" aria-label="Download this template"
         class="btn btn-outline-light">
         <small>Find Sponsor</small>

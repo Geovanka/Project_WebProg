@@ -12,7 +12,8 @@ class Transaction extends Model
         'sponsor_id',
         'user_id',
         'event_id',
-        'status'
+        'status',
+        'file_path'
     ];
 
     public function sponsors()
