@@ -11,7 +11,7 @@
                 <form action="/eventform" method="POST">
                 @csrf
                     <div class="row mb-3">
-                        <label for="eventName" class="col-sm-2 col-form-label">Sponsor Image</label>
+                        <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" id="eventName" name="name" placeholder="Enter Event Name">
                         </div>
@@ -34,7 +34,7 @@
                             <textarea class="form-control" id="eventLocation" name="location" rows="3" placeholder="Enter event Location"></textarea>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Event</button>
                 </form>
             </div>
@@ -43,8 +43,8 @@
 
     <script>
         flatpickr("#eventDate", {
-            dateFormat: "m/d/Y", 
-            placeholder: "mm/dd/yyyy", 
+            dateFormat: "m/d/Y",
+            placeholder: "mm/dd/yyyy",
         });
     </script>
 </x-layout>

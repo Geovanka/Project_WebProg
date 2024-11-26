@@ -69,8 +69,9 @@ Route::get('/submission', function(){
 Route::get('/submission', [SponsorPageController::class, 'userData']);
 
 Route::post('/transaction', [TransactionController::class, 'store']);
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
 Route::get('/showsponsorform', function(){
     return view('sponsorform');
 });;
+
+Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
