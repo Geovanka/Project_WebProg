@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SponsorPageController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InboxController;
 use Illuminate\Support\Facades\Route;
 
 // LANDING PAGE (LOGIN)
@@ -74,3 +75,5 @@ Route::get('/sponsorform', [AdminController::class, 'addSponsor']);
 Route::get('/showsponsorform', function(){
     return view('sponsorform');
 });;
+
+Route::get('/inbox', [InboxController::class, 'inbox']);

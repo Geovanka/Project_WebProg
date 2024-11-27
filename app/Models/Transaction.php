@@ -13,7 +13,7 @@ class Transaction extends Model
         'user_id',
         'event_id',
         'status',
-        'file_path'
+        'file_path',
     ];
 
     public function sponsors()
@@ -21,12 +21,12 @@ class Transaction extends Model
         return $this->belongsTo(Sponsor::class);
     }
 
-    public function events()
+    public function event()
     {
         return $this->belongsTo(Event::class);
     }
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

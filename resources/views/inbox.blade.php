@@ -19,6 +19,8 @@
               <ul class="mail_list list-group list-unstyled">
               <div class="col-12 col-lg-10 col-xl-8" style="background: none;">
                 <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
+                  <!-- start of inbox -->
+                  @foreach($transactions as $t)
                   <li class="list-group-item unread" style="background: none;">
                     <div class="media" style="background: none;">
                       <div class="pull-left" style="background: none;">
@@ -37,17 +39,22 @@
                       </div>
                       <div class="media-body">
                         <div class="media-heading">
-                          <a href="mail-single.html" class="m-r-10 text-light">Simply dummy text</a>
+                          <a href="mail-single.html" class="m-r-10 text-light">{{$t->user->name}}</a>
                           <span class="badge bg-amber text-dark">Shop</span>
                           <small class="float-right text-muted">
-                            <time class="hidden-sm-down" style="background: none;" datetime="2017">12:35 AM</time>
+                            <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->user->created_at}}</time>
                             <i class="zmdi zmdi-attachment-alt"></i> 
                           </small>
                         </div>
-                        <p class="msg" style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <p class="msg" style="color: white;">{{$t->event->name}}</p>
+                        <p class="msg" style="color: white;">{{$t->event->description}}</p>
                         <br>
                         <!-- Accept and Decline Buttons -->
                         <div class="btn-group mt-2">
+                        <div class="btn-group mt-2">
+                          <a href="{{ asset('storage/' . $t->file_path) }}" class="btn btn-outline-light" target="_blank">
+                            <small>View Proposal</small>
+                          </a>
                           <a href="" class="btn btn-outline-light">
                             <small>Accept</small>
                           </a>
@@ -58,6 +65,7 @@
                       </div>
                     </div>
                   </li>
+                  @endforeach
                 </div>
               </div>
               </ul>
