@@ -24,19 +24,34 @@ class AdminController extends Controller
         $validatedData = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         if ($validatedData->fails()){
             return redirect()->back()->withErrors($validatedData)->withInput();
         }
 
-        $newSponsor = Sponsor::create([
+        if ($request->hasFile('image')){
+            $imagePath = $request->file('image')->store('/sponsors', 'public');
+        } else {
+            $imagePath = null;
+        }
+
+        Sponsor::create([
             'name' => $request->name,
             'description' => $request->description,
-            'email' => $request->email
+            'password' => bcrypt($request->password),
+            'email' => $request->email,
+            'image'=> $imagePath,
+            'email_verified_at' => now()
         ]);
 
-        return redirect()->route('admin');
+        return redirect()->route('admin.dashboard')->with('success', 'Image uploaded successfully...');
+        // return redirect()->route('admin.dashboard');
+    }
+
+    public function editSponsor(Request $request){
+
     }
 }
