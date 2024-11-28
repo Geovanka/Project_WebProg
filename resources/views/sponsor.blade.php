@@ -8,7 +8,7 @@
             <div class="col-12">
               <h1 class="display-1 fw-bold mb-5">
                 <br>
-                {{$sponsor->name}} 
+                {{$sponsor->name}}
                 <!-- <br> -->
                 <br>
                 <!-- nama company -->
@@ -16,7 +16,7 @@
               <div class="row d-flex align-items-center">
 
                 <div class="col-12 col-lg-7">
-                  <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset($sponsor->image)}}" width="512" height="512"
+                  <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset('storage/'. $sponsor->image)}}" width="512" height="512"
                     alt="a nice person" loading="lazy" data-aos="zoom-in-right">
                     <br><br><br>
                 </div>
@@ -27,17 +27,17 @@
 
                 </div>
               <br>
-              
-              <p class="lead border-top pt-5 mt-5" data-aos="fade-up">PT Gojek Indonesia is an Indonesian on-demand multi-service platform and digital payment technology group based in Jakarta. 
-                Gojek was first established in Indonesia in 2009 as a call center to connect consumers to courier delivery and two-wheeled ride-hailing services. 
+
+              <p class="lead border-top pt-5 mt-5" data-aos="fade-up">PT Gojek Indonesia is an Indonesian on-demand multi-service platform and digital payment technology group based in Jakarta.
+                Gojek was first established in Indonesia in 2009 as a call center to connect consumers to courier delivery and two-wheeled ride-hailing services.
                 Gojek launched its application in 2015 with only four services: GoRide, GoSend, GoShop, and GoFood. Valued at US$10 billion today, Gojek has transformed into a super app, providing more than 20 services.
               </p>
             </div>
           </div>
         </div>
-        <a href="https://docs.google.com/document/d/1NOoNTRrxP2zrRCMUf28cSKkpchaXIylc/export?format=docx" 
+        <a href="https://docs.google.com/document/d/1NOoNTRrxP2zrRCMUf28cSKkpchaXIylc/export?format=docx"
           aria-label="Download this template"
-          class="btn btn-outline-light" 
+          class="btn btn-outline-light"
           download>
           <small>Download Proposal</small>
         </a>
@@ -47,7 +47,7 @@
         </a>
         <div class="row">
           <div class="col-12 py-vh-2">
-            
+
           </div>
         </div>
         <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
@@ -60,6 +60,6 @@
         </div>
 
   </main>
-  
+
   <x-footer/>
 </x-layout>
