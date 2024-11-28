@@ -7,7 +7,7 @@
             <small>Add Sponsor</small>
         </a>
 
-        <a href="#" class="btn btn-outline-light addSponsor">
+        <a href="/" class="btn btn-outline-light addSponsor">
             <small>Logout</small>
         </a>
     </div>
