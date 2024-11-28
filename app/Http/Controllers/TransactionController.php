@@ -28,5 +28,25 @@ class TransactionController extends Controller
         return back()->with('success', 'Proposal uploaded successfully!');
     }
 
-    
+    public function index(){
+        $transactions = Transaction::where('sponsor_id', auth()->id())->get();
+        return view('transaction.index', compact('transactions'));
+    }
+
+    public function accept($id){
+        $transaction = Transaction::findOrFail($id);
+        $transaction->update(['status' => 'accepted']);
+        return redirect()->back()->with('success', 'Proposal accepted.');
+    }
+
+    public function reject($id){
+        $transaction = Transaction::findOrFail($id);
+        $transaction->update(['status' => 'rejected']);
+        return redirect()->back()->with('error', 'Proposal rejected.');
+    }
+
+    public function organizationProposals(){
+        $transactions = Transaction::where('user_id', auth()->id())->get();
+        return view('inbox', compact('transactions'));
+    }
 }

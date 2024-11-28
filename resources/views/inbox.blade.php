@@ -40,7 +40,14 @@
                       <div class="media-body">
                         <div class="media-heading">
                           <a href="mail-single.html" class="m-r-10 text-light">{{$t->user->name}}</a>
-                          <span class="badge bg-amber text-dark">Shop</span>
+                          <!-- <span class="badge bg-amber text-dark">Shop</span> -->
+                          @if($t->status === 'pending')
+                            <span class="badge bg-warning text-dark">On check</span>
+                          @elseif($t->status === 'accepted')
+                            <span class="badge bg-success text-light">Accepted</span>
+                          @elseif($t->status === 'rejected')
+                            <span class="badge bg-danger text-light">Rejected</span>
+                          @endif
                           <small class="float-right text-muted">
                             <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->user->created_at}}</time>
                             <i class="zmdi zmdi-attachment-alt"></i> 
@@ -49,18 +56,87 @@
                         <p class="msg" style="color: white;">{{$t->event->name}}</p>
                         <p class="msg" style="color: white;">{{$t->event->description}}</p>
                         <br>
+
+
+
                         <!-- Accept and Decline Buttons -->
                         <div class="btn-group mt-2">
                         <div class="btn-group mt-2">
                           <a href="{{ asset('storage/' . $t->file_path) }}" class="btn btn-outline-light" target="_blank">
                             <small>View Proposal</small>
                           </a>
-                          <a href="" class="btn btn-outline-light">
+                          <!-- <a href="{{ route('transactions.accept', $t->id) }}" class="btn btn-outline-light">
                             <small>Accept</small>
-                          </a>
-                          <a href="" class="btn btn-outline-light">
-                            <small>Decline</small>
-                          </a>
+                          </a> -->
+                          @if($t->status !== 'accepted' && $t->status !== 'rejected')
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $t->id }}">
+                              <small>Accept</small>
+                            </button>
+
+                            <div class="modal fade" id="acceptModal{{ $t->id }}" tabindex="-1" role="dialog" aria-labelledby="acceptModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="acceptModalLabel">Confirm Acceptance</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                          Are you sure you want to accept this proposal?
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                          <form action="{{ route('transactions.accept', $t->id) }}" method="POST" style="display: inline;">
+                                              @csrf
+                                              <button type="submit" class="btn btn-success">Yes, Accept</button>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                      
+                            <!-- <a href="{{ route('transactions.reject', $t->id) }}" class="btn btn-outline-light">
+                              <small>Decline</small>
+                            </a> -->
+    
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#rejectModal{{ $t->id }}">
+                              <small>Reject</small>
+                            </button>
+
+                            <div class="modal fade" id="rejectModal{{ $t->id }}" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="rejectModalLabel">Confirm Rejection</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                          Are you sure you want to reject this proposal?
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                          <form action="{{ route('transactions.reject', $t->id) }}" method="POST" style="display: inline;">
+                                              @csrf
+                                              <button type="submit" class="btn btn-danger">Yes, Reject</button>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          @endif
+                        </div>
+
+                      
+
+
+                          <script>
+                            function confirmAndHide(button, message) {
+                              if (confirm(message)) {
+                                button.closest('form').parentElement.querySelectorAll('form').forEach(form => {
+                                  form.style.display = 'none';
+                                });
+                                return true;
+                              }
+                              return false;
+                            }
+                          </script>
                         </div>
                       </div>
                     </div>

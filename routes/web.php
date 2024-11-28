@@ -77,3 +77,13 @@ Route::get('/showsponsorform', function(){
 
 Route::get('/inbox', [InboxController::class, 'inbox']);
 Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
+
+
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+Route::post('/transactions/{id}/accept', [TransactionController::class, 'accept'])->name('transactions.accept');
+Route::post('/transactions/{id}/reject', [TransactionController::class, 'reject'])->name('transactions.reject');
+
+Route::get('/organization/transactions', [TransactionController::class, 'organizationProposals'])->name('transactions.organization');
+
+
+
