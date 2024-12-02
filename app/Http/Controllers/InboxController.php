@@ -12,4 +12,11 @@ class InboxController extends Controller
 
         return view('inbox', compact('transactions'));
     }
+
+    public function inboxuser(){
+
+        $transactions = Transaction::with('sponsors', 'event')->get();
+
+        return view('inboxuser', compact('transactions'));
+    }
 }

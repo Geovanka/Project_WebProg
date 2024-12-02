@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->string('status');
             $table->string('file_path');
+            $table->text('negotiation')->nullable();
             $table->timestamps();
         });
 

@@ -82,8 +82,9 @@ Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 Route::post('/transactions/{id}/accept', [TransactionController::class, 'accept'])->name('transactions.accept');
 Route::post('/transactions/{id}/reject', [TransactionController::class, 'reject'])->name('transactions.reject');
+Route::post('/transactions/{id}/negotiate', [TransactionController::class, 'negotiate'])->name('transactions.negotiate');
 
 Route::get('/organization/transactions', [TransactionController::class, 'organizationProposals'])->name('transactions.organization');
 
-
+Route::get('/inboxuser', [InboxController::class, 'inboxuser']);
 

@@ -45,6 +45,14 @@ class TransactionController extends Controller
         return redirect()->back()->with('error', 'Proposal rejected.');
     }
 
+    public function negotiate(Request $request, $id){
+        // dd($request->negotiation); 
+        $transaction = Transaction::findOrFail($id);
+        $transaction->negotiation = $request->negotiation;
+        $transaction->save();
+        return redirect()->back();
+    }
+
     public function organizationProposals(){
         $transactions = Transaction::where('user_id', auth()->id())->get();
         return view('inbox', compact('transactions'));

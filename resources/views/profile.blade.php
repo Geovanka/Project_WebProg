@@ -31,10 +31,10 @@
           <p class="text-secondary text-center mt-5">No events found.</p>
         @endif
 
-      <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
+      <div class="row d-flex align-items-start justify-content-center text-muted" data-aos="fade">
         <div class="col-12 col-lg-10 col-xl-9">
-          <div class="p-5 small bg-gray-900">
-            <p>*At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+          <div class="p-5 small">
+            <!-- <p>*At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
               sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore
               et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
@@ -45,7 +45,7 @@
               gubergren, no sea takimata sanctus est Lorem
               ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
               Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat.</p>
+              erat.</p> -->
           </div>
         </div> 
       </div>
@@ -54,8 +54,8 @@
           class="btn btn-outline-light submitButton">
           <small>Add Event</small>
       </a>
-
     </div>
+    
     
   </main>
   
