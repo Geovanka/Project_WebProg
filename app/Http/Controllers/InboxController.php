@@ -29,7 +29,7 @@ class InboxController extends Controller
         return view('inbox', compact('search', 'transactions'));
     }
 
-    public function inboxuser(){
+    public function inboxuser(Request $request){
 
         $query = Transaction::with(['sponsor', 'event']);
 

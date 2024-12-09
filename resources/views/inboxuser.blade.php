@@ -23,7 +23,7 @@
                   <!-- start of inbox -->
 
                   <div class="row mb-3">
-                    <form action="{{ route('inboxuser') }}" method="GET" id="eventFilterForm" class="col-sm-12">
+                    <form action="/inboxuser" method="GET" id="eventFilterForm" class="col-sm-12">
                       <label for="eventName" class="col-sm-2 col-form-label">Pick Event</label>
                       <div class="col-sm-10">
                           <select id="eventSelect" name="event_id" class="form-control" aria-label="Default select example"
