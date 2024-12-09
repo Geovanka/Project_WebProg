@@ -121,7 +121,7 @@
                               </div>
                             </div>
 
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#negotiateModal{{ $t->id }}">
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#negotiateModal{{ $t->id }}">
                               <small>Negotiate</small>
                             </button>
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
+use App\Models\Event;
 
 class InboxController extends Controller
 {
@@ -15,8 +17,19 @@ class InboxController extends Controller
 
     public function inboxuser(){
 
-        $transactions = Transaction::with('sponsors', 'event')->get();
+        $query = Transaction::with(['sponsor', 'event']);
 
-        return view('inboxuser', compact('transactions'));
+        if ($request->has('event_id')) {
+            $query->where('event_id', $request->event_id);
+        }
+
+        $transactions = $query->get();
+        
+        $userId = Auth::id(); 
+        $events = Event::where('user_id', $userId)->get();
+
+        // dd($transactions->toArray());
+
+        return view('inboxuser', compact('transactions', 'events'));
     }
 }

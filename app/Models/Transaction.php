@@ -16,7 +16,7 @@ class Transaction extends Model
         'file_path',
     ];
 
-    public function sponsors()
+    public function sponsor()
     {
         return $this->belongsTo(Sponsor::class);
     }
