@@ -10,55 +10,42 @@
       <section class="content inbox">
         <div class="container-fluid">
           <nav class="navbar navbar-dark">
-            <form class="form-inline" action="{{ route('inbox') }}" method="GET">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search by user or event" aria-label="Search" value="{{ $search ?? '' }}" name="search">
+            <form class="form-inline d-flex flex-row" action="{{ route('inbox') }}" method="GET">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search by user or event" aria-label="Search" value="{{ $search ?? '' }}" name="search" style="margin-right: 20px;">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </nav>
 
 
           <div class="row clearfix">
-            <div class="col-md-12 col-lg-12 col-xl-12">
+            @if($transactions->isEmpty())
+              <p class="text-light">No transactions found for your search.</p>
+            @else
+            @foreach($transactions as $t)
+            <div class="col-12">
               <ul class="mail_list list-group list-unstyled">
-                @if($transactions->isEmpty())
-                  <p class="text-light">No transactions found for your search.</p>
-                @else
-              <div class="col-12 col-lg-10 col-xl-8" style="background: none;">
-                <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
                   <!-- start of inbox -->
-                  @foreach($transactions as $t)
-                  <li class="list-group-item unread" style="background: none;">
+                  <li class="list-group-item unread" style="background: none; border-left: 2px solid gray;">
                     <div class="media" style="background: none;">
-                      <div class="pull-left" style="background: none;">
-                        <div class="controls" style="background: none;">
-                          <div class="checkbox">
-                            <input type="checkbox" id="basic_checkbox_2">
-                            <label for="basic_checkbox_2"></label>
-                          </div>
-                          <a href="javascript:void(0);" class="favourite col-amber hidden-sm-down" data-toggle="active">
-                            <i class="zmdi zmdi-star"></i>
-                          </a>
-                        </div>
-                        <div class="thumb hidden-sm-down m-r-20">
-                          <img src="assets/images/xs/avatar2.jpg" class="rounded-circle border border-light" alt="">
-                        </div>
-                      </div>
                       <div class="media-body">
                         <div class="media-heading">
                           <a href="mail-single.html" class="m-r-10 text-light">{{$t->user->name}}</a>
-                          <!-- <span class="badge bg-amber text-dark">Shop</span> -->
+
                           @if($t->status === 'pending')
                             <span class="badge bg-warning text-dark">On check</span>
                           @elseif($t->status === 'accepted')
                             <span class="badge bg-success text-light">Accepted</span>
                           @elseif($t->status === 'rejected')
                             <span class="badge bg-danger text-light">Rejected</span>
+                          @elseif($t->status === 'negotiated')
+                            <span class="badge bg-warning text-light">Negotiated</span>
                           @endif
-                          <small class="float-right text-muted">
-                            <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->created_at}}</time>
+                          <small class="text-muted">
+                            <time class="hidden-sm-down" style="color: white; margin-left: 20px;" datetime="2017">{{$t->created_at}}</time>
                             <i class="zmdi zmdi-attachment-alt"></i> 
                           </small>
                         </div>
+                        
                         <p class="msg" style="color: white;">{{$t->event->name}}</p>
                         <p class="msg" style="color: white;">{{$t->event->description}}</p>
                         <br>
@@ -73,7 +60,7 @@
                           <!-- <a href="{{ route('transactions.accept', $t->id) }}" class="btn btn-outline-light">
                             <small>Accept</small>
                           </a> -->
-                          @if($t->status !== 'accepted' && $t->status !== 'rejected')
+                          @if($t->status === 'pending')
                             <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $t->id }}">
                               <small>Accept</small>
                             </button>
@@ -97,11 +84,7 @@
                                   </div>
                               </div>
                             </div>
-                      
-                            <!-- <a href="{{ route('transactions.reject', $t->id) }}" class="btn btn-outline-light">
-                              <small>Decline</small>
-                            </a> -->
-    
+                    
                             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#rejectModal{{ $t->id }}">
                               <small>Reject</small>
                             </button>
@@ -175,10 +158,9 @@
                     </div>
                   </li>
                   @endforeach
-                </div>
-              </div>
-              @endif
+                @endif
               </ul>
+
               <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">

@@ -49,6 +49,7 @@ class TransactionController extends Controller
         // dd($request->negotiation); 
         $transaction = Transaction::findOrFail($id);
         $transaction->negotiation = $request->negotiation;
+        $transaction->update(['status' => 'negotiated']);
         $transaction->save();
         return redirect()->back();
     }
