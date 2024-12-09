@@ -75,7 +75,7 @@ Route::get('/showsponsorform', function(){
     return view('sponsorform');
 });;
 
-Route::get('/inbox', [InboxController::class, 'inbox']);
+Route::get('/inbox', [InboxController::class, 'inbox'])->name('inbox');
 Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
 
 
