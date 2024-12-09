@@ -10,14 +10,19 @@
       <section class="content inbox">
         <div class="container-fluid">
           <nav class="navbar navbar-dark">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline" action="{{ route('inbox') }}" method="GET">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search by user or event" aria-label="Search" value="{{ $search ?? '' }}" name="search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </nav>
+
+
           <div class="row clearfix">
             <div class="col-md-12 col-lg-12 col-xl-12">
               <ul class="mail_list list-group list-unstyled">
+                @if($transactions->isEmpty())
+                  <p class="text-light">No transactions found for your search.</p>
+                @else
               <div class="col-12 col-lg-10 col-xl-8" style="background: none;">
                 <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
                   <!-- start of inbox -->
@@ -172,6 +177,7 @@
                   @endforeach
                 </div>
               </div>
+              @endif
               </ul>
               <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
