@@ -57,9 +57,8 @@ Route::get('/inbox', function(){
 
 // ADMIN DASHBOARD
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
-Route::get('/admin', function(){
-    return view('admin');
-})->name('admin.dashboard');
+Route::get('/admin/{id}/edit', [AdminController::class, 'editSponsor'])->name('admin.edit');
+Route::put('/admin/{id}', [AdminController::class, 'updateSponsor'])->name('admin.update');
 
 Route::get('/company/{id}', [SponsorPageController::class, 'show'])->name('sponsor.show');
 
@@ -70,7 +69,7 @@ Route::get('/submission', function(){
 Route::get('/submission', [SponsorPageController::class, 'userData']);
 
 Route::post('/transaction', [TransactionController::class, 'store']);
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
+// Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
 Route::get('/showsponsorform', function(){
     return view('sponsorform');
 });;

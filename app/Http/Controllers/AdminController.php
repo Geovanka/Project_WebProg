@@ -48,10 +48,33 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('admin.dashboard')->with('success', 'Image uploaded successfully...');
-        // return redirect()->route('admin.dashboard');
     }
 
-    public function editSponsor(Request $request){
+    public function editSponsor($id){
+        $sponsor = Sponsor::find($id);
+        // dd($sponsor);
+        return view('editSponsor', compact('sponsor'));
+    }
 
+    public function updateSponsor(Request $request, $id){
+        $sponsor = Sponsor::find($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $sponsor->name = $request->name;
+        $sponsor->email = $request->email;
+        $sponsor->description = $request->description;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('sponsors', 'public');
+            $sponsor->image = $imagePath;
+        }
+        $sponsor->save();
+
+        return redirect('/admin')->with('success', 'Sponsor updated successfully!');
     }
 }
