@@ -26,33 +26,59 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validatedData)->withInput();
         }
 
-        $user = User::where('email', $request->email)->first();
-
-        if ($user){
-            if(Hash::check($request->password, $user->password)){
-                Auth::login($user);
-                return redirect()->intended('home');
-            }
-        }
-
-        $sponsor = Sponsor::where('email', $request->email)->first();
-
-        if ($sponsor){
-            if($sponsor->password == $request->password){
-                Auth::login($sponsor);
-                return redirect()->intended('sponsor.dashboard');
-            }
-        }
-
         $admin = Admin::where('email', $request->email)->first();
 
         if ($admin){
-            if($request->password == $admin->password){
-                Auth::login($admin);
+            if(Hash::check($request->password, $admin->password)){
+                Auth::guard('admin')->login($admin);
                 return redirect()->intended('admin');
             }
-        }
+        } else {
+            $sponsor = Sponsor::where('email', $request->email)->first();
 
+            if ($sponsor){
+                if(Hash::check($request->password, $sponsor->password)){
+                    Auth::guard('sponsor')->login($sponsor);
+                    // Auth::login($sponsor);
+                    return redirect()->intended('home');
+                }
+            } else {
+                $user = User::where('email', $request->email)->first();
+
+                if ($user){
+                    if(Hash::check($request->password, $user->password)){
+                        Auth::guard('user')->login($user);
+                        // Auth::login($user);
+                        return redirect()->intended('home');
+                    }
+                }
+            }
+        }
         return redirect()->back()->with('error', '* Invalid email or password...');
+    }
+
+    public function logout()
+    {
+        if(Auth::guard('sponsor')->check()){
+            Auth::guard('sponsor')->logout();
+            return redirect()->route('landing');
+        } else if (Auth::guard('user')->check()){
+            Auth::guard('user')->logout();
+            return redirect()->route('landing');
+        } else if (Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout();
+            return redirect()->route('landing');
+        }
+    }
+
+    public function createAdmin(){
+
+        // Create a new admin and hash the password before saving it
+        $admin = new Admin();
+        $admin->email = 'admin@sponstore.com';
+        $admin->password = Hash::make('admin123'); // Hash the password
+        $admin->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Admin created successfully');
     }
 }

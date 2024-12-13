@@ -9,73 +9,64 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InboxController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-// LANDING PAGE (LOGIN)
+// LANDING PAGE (LOGIN) & LOGOUT =================================================================================================================================================================================================================================
 Route::get('/', function(){
     return view('login');
 })->name('landing');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// REGISTER PAGE
+// REGISTER PAGE =================================================================================================================================================================================================================================
 Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-// HOME PAGE
+// HOME PAGE =================================================================================================================================================================================================================================
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// EVENT FORM
+// HOME SEARCH =================================================================================================================================================================================================================================
+Route::get('/search', [HomeController::class, 'search'])->name('search');
+
+// PROFILE PAGE =================================================================================================================================================================================================================================
+Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');
+
+// EVENT FORM =================================================================================================================================================================================================================================
 Route::post('/eventform', [ProfileController::class, 'addevent']);
 Route::get('/showeventform', function(){
     return view('eventform');
 });
 
-// PROFILE PAGE
-Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-
-// SPONSOR DASHBOARD
-Route::get('/sponsorPage', function(){
-    return view('sponsorPage');
+// SPONSOR DASHBOARD =================================================================================================================================================================================================================================
+Route::get('/sponsor', function(){
+    return view('sponsor');
 })->name('sponsor.dashboard');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
+// INBOX =================================================================================================================================================================================================================================
+Route::get('/inbox', [InboxController::class, 'inbox'])->name('inbox');
+Route::get('/inboxuser', [InboxController::class, 'inboxuser'])->name('inboxuser');
 
-Route::post('register', [RegisterController::class, 'register']);
-
-Route::get('/search', [HomeController::class, 'search'])->name('search');
-
-Route::get('/company', function(){
-    return view('company');
-});
-// Route::get('/sponsor', function(){
-//     return view('sponsor');
-// });
-
-Route::get('/inbox', function(){
-    return view('inbox');
-});
-
-// ADMIN DASHBOARD
+// ADMIN DASHBOARD =================================================================================================================================================================================================================================
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
 Route::get('/admin/{id}/edit', [AdminController::class, 'editSponsor'])->name('admin.edit');
 Route::put('/admin/{id}', [AdminController::class, 'updateSponsor'])->name('admin.update');
-
-Route::get('/company/{id}', [SponsorPageController::class, 'show'])->name('sponsor.show');
-
-Route::get('/submission', function(){
-    return view('submission');
-});
-
-Route::get('/submission', [SponsorPageController::class, 'userData']);
-
-Route::post('/transaction', [TransactionController::class, 'store']);
-// Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
+Route::delete('/admin/{id}', [AdminController::class, 'deleteSponsor'])->name('admin.delete');
+Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
 Route::get('/showsponsorform', function(){
     return view('sponsorform');
 });;
 
-Route::get('/inbox', [InboxController::class, 'inbox'])->name('inbox');
-Route::post('/sponsorform', [AdminController::class, 'addSponsor']);
+// INDIVIDUAL SPONSOR + SUBMISSIOON =================================================================================================================================================================================================================================
+// Route::get('/company/{id}', [SponsorPageController::class, 'show'])->name('sponsor.show');
+// Route::get('/submission', function(){
+//     return view('submission');
+// });
+// Route::get('/submission/{sponsor_id}', [TransactionController::class, 'store'])->name('transaction.store');
+
+// Route::get('/submission/{id}', [SponsorPageController::class, 'userData'])->name('submission.show');
+Route::get('/sponsor/{id}', [SponsorPageController::class, 'show'])->name('show.sponsor');
+Route::get('/submission/{sponsor}', [SponsorPageController::class, 'userData'])->name('submission.show');
+Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 
 
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
@@ -85,5 +76,6 @@ Route::post('/transactions/{id}/negotiate', [TransactionController::class, 'nego
 
 Route::get('/organization/transactions', [TransactionController::class, 'organizationProposals'])->name('transactions.organization');
 
-Route::get('/inboxuser', [InboxController::class, 'inboxuser']);
 
+// TESTING =================================================================================================================================================================================================================================
+Route::get('/test', [LoginController::class, 'createAdmin']);

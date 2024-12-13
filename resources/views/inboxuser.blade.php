@@ -47,10 +47,11 @@
                             <div class="media" style="background: none;">
                             <div class="media-body">
                                 <div class="media-heading">
+                                    {{-- belom selesai --}}
                                 @if($t->sponsor)
-                                    <a href="mail-single.html" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
+                                    <a href="{{route('profile', $t->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
                                 @else
-                                    <a href="mail-single.html" class="m-r-10 text-light">No Sponsor</a>
+                                    <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
                                 @endif
 
                                 @if($t->status === 'pending')
@@ -64,7 +65,7 @@
                                 @endif
                                 <small class="float-right text-muted">
                                     <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->created_at}}</time>
-                                    <i class="zmdi zmdi-attachment-alt"></i> 
+                                    <i class="zmdi zmdi-attachment-alt"></i>
                                 </small>
                                 </div>
                                 <p class="msg" style="color: white;">{{$t->event->name}}</p>

@@ -7,13 +7,21 @@
             <small>Add Sponsor</small>
         </a>
 
-        <a href="/" class="btn btn-outline-light addSponsor">
-            <small>Logout</small>
-        </a>
+        @if (Auth::guard('admin')->check())
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <button type="submit" aria-label="Download this template" class="btn btn-outline-light addSponsor">
+                    <small>Log Out</small>
+                </button>
+            </form>
+        @endif
     </div>
 
     <div class="container-fluid">
         <div class="row g-0">
+            @if($sponsor->isEmpty())
+                <p class="text-light">No transactions found for your search.</p>
+            @else
             @foreach($sponsor as $s)
                 <div class="col-12 col-md-6 col-lg-3 mb-4" style="padding: 0px 15px;">
                     <div class="card bg-transparent adminCard" style="width: 100%;">
@@ -24,40 +32,31 @@
                             <p class="card-text">{{ $s->description }}</p>
                             <p class="card-text">{{ $s->email }}</p>
                             <a href="{{ route('admin.edit', $s->id)}}" class="btn btn-primary edit-button" style="color: white;" data-id="{{ $s->id }}">Edit</a>
+                            <form action="{{ route('admin.delete', $s->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this sponsor?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" style="color: red;">Delete</button>
+                            </form>
+                            {{-- <script>
+                                function confirmAndHide(button, message) {
+                                    if (confirm(message)) {
+                                        button.closest('form').parentElement.querySelectorAll('form').forEach(form => {
+                                        form.style.display = 'none';
+                                    });
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                            </script> --}}
                         </div>
                     </div>
                 </div>
             @endforeach
+            @endif
+            <div class="pagination">
+                {{ $sponsor->links('pagination::tailwind') }}
+            </div>
         </div>
     </div>
 
-    {{-- <script>
-        document.querySelectorAll('.edit-button').forEach(button => {
-            button.addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent the default behavior of the <a> tag
-
-                const sponsorId = this.dataset.id; // Get the sponsor ID from the button's data-id attribute
-
-                // Fetch sponsor data
-                fetch(`/admin/${sponsorId}`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Populate the form with sponsor data
-                        document.querySelector('#sponsor-id').value = data.id;
-                        document.querySelector('input[name="name"]').value = data.name;
-                        document.querySelector('input[name="email"]').value = data.email;
-                        document.querySelector('textarea[name="description"]').value = data.description;
-
-                    })
-                    .catch(error => console.error('Error fetching sponsor data:', error));
-            });
-        });
-
-
-    </script> --}}
 </x-layout>

@@ -29,7 +29,8 @@
                     <div class="media" style="background: none;">
                       <div class="media-body">
                         <div class="media-heading">
-                          <a href="mail-single.html" class="m-r-10 text-light">{{$t->user->name}}</a>
+                            {{-- belom selesai --}}
+                          <a href="{{route('profile', $t->user->id)}}" class="m-r-10 text-light">{{$t->user->name}}</a>
 
                           @if($t->status === 'pending')
                             <span class="badge bg-warning text-dark">On check</span>
@@ -42,10 +43,10 @@
                           @endif
                           <small class="text-muted">
                             <time class="hidden-sm-down" style="color: white; margin-left: 20px;" datetime="2017">{{$t->created_at}}</time>
-                            <i class="zmdi zmdi-attachment-alt"></i> 
+                            <i class="zmdi zmdi-attachment-alt"></i>
                           </small>
                         </div>
-                        
+
                         <p class="msg" style="color: white;">{{$t->event->name}}</p>
                         <p class="msg" style="color: white;">{{$t->event->description}}</p>
                         <br>
@@ -84,7 +85,7 @@
                                   </div>
                               </div>
                             </div>
-                    
+
                             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#rejectModal{{ $t->id }}">
                               <small>Reject</small>
                             </button>
@@ -136,7 +137,7 @@
                               </div>
                             </div>
                           @endif
-                          
+
 
                         </div>
 

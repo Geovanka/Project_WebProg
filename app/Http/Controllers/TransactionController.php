@@ -25,7 +25,7 @@ class TransactionController extends Controller
             'file_path' => $proposalPath, // Save the file path
         ]);
 
-        return back()->with('success', 'Proposal uploaded successfully!');
+        return redirect('/inbox')->with('success', 'Proposal uploaded successfully!');
     }
 
     public function index(){
@@ -46,7 +46,7 @@ class TransactionController extends Controller
     }
 
     public function negotiate(Request $request, $id){
-        // dd($request->negotiation); 
+        // dd($request->negotiation);
         $transaction = Transaction::findOrFail($id);
         $transaction->negotiation = $request->negotiation;
         $transaction->update(['status' => 'negotiated']);

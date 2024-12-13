@@ -41,7 +41,8 @@
           download>
           <small>Download Proposal</small>
         </a>
-        <a href="{{ url('/submission') }}" aria-label="Download this template"
+        {{-- <a href="{{ url('/submission') }}" aria-label="Download this template" --}}
+        <a href="{{ route('submission.show', $sponsor->id)}}" aria-label="Download this template"
           class="btn btn-outline-light">
           <small>Submit Proposal</small>
         </a>

@@ -1,5 +1,5 @@
 <x-layout>
-    
+
     <div class="d-flex flex-row align-items-left">
         <span class="back">&lt;</span>
         <a href="/profile" class="backs">back</a>
@@ -15,7 +15,7 @@
                         <label for="eventName" class="col-sm-2 col-form-label">Pick Event</label>
                         <div class="col-sm-10">
                             <select id="eventSelect" name="event_id" class="form-control" aria-label="Default select example">
-                                <option selected disabled>Open this select menu</option>
+                                <option selected disabled>Please select event</option>
                                 @foreach($events as $e)
                                     <option value="{{ $e->id }}">{{ $e->name }}</option>
                                 @endforeach
@@ -38,21 +38,21 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="eventLocation" class="col-sm-2 col-form-label">Event Location</label>
+                        <label for="eventLocation" class="col-sm-2 col-form-label">Event Location {{$sponsor_id}}</label>
                         <div class="col-sm-10">
                             <textarea id="eventLocation" class="form-control" rows="3" placeholder="Event Location"></textarea>
                         </div>
                     </div>
 
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}"> <!-- Automatically pass logged-in user ID -->
-                    <input type="hidden" name="sponsor_id" value="1"> <!-- Example sponsor ID; adjust as needed -->
+                    <input type="hidden" name="sponsor_id" value="{{$sponsor_id}}"> <!-- Example sponsor ID; adjust as needed -->
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Upload Proposal (.pdf)</label>
                         <input class="form-control" type="file" id="formFile" name="file_path">
                     </div>
-                        
-                    <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Event</button>
+
+                    <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Submit</button>
                 </form>
             </div>
         </div>

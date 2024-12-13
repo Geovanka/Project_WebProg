@@ -9,18 +9,20 @@ class SponsorPageController extends Controller
 {
     public function show($id){
         $sponsor = Sponsor::findOrFail($id);
-
         return view('sponsor', compact('sponsor'));
     }
 
-    public function userData(Request $request){
+    // public function userData(Request $request){
+    public function userData($id){
 
         $user = auth()->user();
         $events = $user?->events;
 
+        // return redirect()->route('');
         return view('submission', [
             'user' => $user,
-            'events' => $events
+            'events' => $events,
+            'sponsor_id' => $id
         ]);
     }
 

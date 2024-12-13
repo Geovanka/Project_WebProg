@@ -6,6 +6,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -13,6 +14,7 @@ class ProfileController extends Controller
 
     public function profile(Request $request){
 
+        // $user = auth()->guard('user')->user();
         $user = auth()->user();
         $events = $user?->events;
 
@@ -41,11 +43,11 @@ class ProfileController extends Controller
         if ($user) {
             $user->events()->create([
                 'name' => $validated['name'],
-                'description' => $validated['description'], 
-                'date' => $eventDate, 
+                'description' => $validated['description'],
+                'date' => $eventDate,
                 'location' => $validated['location']
             ]);
-        } 
+        }
 
         return redirect()->route('profile');
     }

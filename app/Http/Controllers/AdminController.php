@@ -12,8 +12,7 @@ class AdminController extends Controller
     //
     public function admin(){
 
-        $sponsor = Sponsor::all();
-
+        $sponsor = Sponsor::paginate(10);
         return view('admin', [
             'sponsor' => $sponsor
         ]);
@@ -76,5 +75,16 @@ class AdminController extends Controller
         $sponsor->save();
 
         return redirect('/admin')->with('success', 'Sponsor updated successfully!');
+    }
+
+    public function deleteSponsor($id){
+
+        $sponsor = Sponsor::findOrFail($id);
+        if($sponsor->image){
+            \Storage::disk('public')->delete($sponsor->image);
+        }
+
+        $sponsor->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'Sponsor updated successfully!');
     }
 }
