@@ -65,6 +65,27 @@ class InboxController extends Controller
         return view('inboxuser', compact('transactions', 'events'));
     }
 
+    public function sent(Request $request){
+
+        // dd($query = Transaction::with(['sponsor', 'event']));
+        $query = Transaction::with(['sponsor', 'event']);
+
+        if ($request->has('event_id')) {
+            $query->where('event_id', $request->event_id);
+        }
+
+        // $userId = Auth::id();
+        // $query->whereHas('event', function ($q) use ($userId) {
+        //     $q->where('user_id', $userId);
+        // });
+        $transactions = $query->get();
+        // $userId = Auth::id();
+        $userId = auth()->id();
+        $events = Event::where('user_id', $userId)->get();
+        // dd($transactions->toArray());
+        return view('sent', compact('transactions', 'events'));
+    }
+
     // public function inboxuser(Request $request)
     // {
     //     $userId = auth()->id();

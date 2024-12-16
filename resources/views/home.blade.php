@@ -14,7 +14,7 @@
             <p class="lead text-secondary">We are committed to bridging the gap between sponsors and organizations, streamlining the sponsorship agreement process for seamless collaboration and mutual success.</p>
           </div>
           <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Explore
+            <a href="#sponsors" class="btn btn-xl btn-light">Explore
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -36,45 +36,23 @@
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
-            <img src="img/webp/abstract6.webp" width="1116" height="1578" alt="abstract image"
+            <img src="{{ asset('assets/images/Logo_Binus_White.png') }}" width="180" height="1732" alt="abstract image"
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
           </div>
           <div class="col-12 col-md-6 col-lg-3">
-            <img src="img/webp/abstract9.webp" width="1116" height="848" alt="abstract image"
+            <img src="{{ asset('assets/images/Logo_Binus_White.png') }}" width="180" height="1732" alt="abstract image"
               class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-dark">
+    <div class="bg-dark" id="sponsors">
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
             <span class="h5 text-secondary fw-lighter">Sponsors</span>
             <h2 class="display">Check out our sponsor</h2>
           </div>
-          <!-- <div class="col-12 col-lg-5" data-aos="fade-left">
-            <h3 class="pt-5">Easy Proposal Approval</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
-            </p>
-            <h3 class="border-top border-secondary pt-5 mt-5">Independent Agreement</h3>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-              </svg>
-            </p>
-          </div> -->
         </div>
       </div>
     </div>

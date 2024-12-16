@@ -47,6 +47,9 @@ Route::get('/sponsor', function(){
 Route::get('/inbox', [InboxController::class, 'inbox'])->name('inbox');
 Route::get('/inboxuser', [InboxController::class, 'inboxuser'])->name('inboxuser');
 
+// SENT =================================================================================================================================================================================================================================
+Route::get('/sent', [InboxController::class, 'sent'])->name('sent');
+
 // ADMIN DASHBOARD =================================================================================================================================================================================================================================
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin.dashboard');
 Route::get('/admin/{id}/edit', [AdminController::class, 'editSponsor'])->name('admin.edit');

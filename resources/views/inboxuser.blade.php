@@ -65,24 +65,12 @@
                                 @endif
                                 <small class="float-right text-muted">
                                     <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->created_at}}</time>
-                                    <i class="zmdi zmdi-attachment-alt"></i>
+                                    <!-- <i class="zmdi zmdi-attachment-alt"></i> -->
                                 </small>
                                 </div>
                                 <p class="msg" style="color: white;">{{$t->event->name}}</p>
                                 <p class="msg" style="color: white;">{{$t->negotiation}}</p>
                                 <br>
-
-                                <script>
-                                    function confirmAndHide(button, message) {
-                                    if (confirm(message)) {
-                                        button.closest('form').parentElement.querySelectorAll('form').forEach(form => {
-                                        form.style.display = 'none';
-                                        });
-                                        return true;
-                                    }
-                                    return false;
-                                    }
-                                </script>
                                 </div>
                             </div>
                             </div>

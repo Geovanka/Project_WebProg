@@ -43,6 +43,13 @@
                 @endif
             </li>
             <li class="nav-item">
+                @if (Auth::guard('user')->check())
+                    <a class="nav-link" href="{{ url('/sent') }}" aria-label="A system message page">
+                        Sent
+                    </a>
+                @endif
+            </li>
+            <li class="nav-item">
                 @if (Auth::guard('sponsor')->check())
                     <a class="nav-link" style="font-weight: 700; color: aquamarine" aria-label="A system message page">
                         <!-- Hello, {{Auth::guard('sponsor')->user()->name}}, ID {{Auth::guard('sponsor')->user()->id}} -->
