@@ -60,7 +60,7 @@ class InboxController extends Controller
         $transactions = $query->get();
         // $userId = Auth::id();
         $userId = auth()->id();
-        $events = Transaction::where('user_id', $userId)->get();
+        $events = Event::where('user_id', $userId)->get();
         // dd($transactions->toArray());
         return view('inboxuser', compact('transactions', 'events'));
     }

@@ -3,8 +3,8 @@
   <main>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <div class="container text-light">
       <br><br><br><br><br>
       <section class="content inbox">
@@ -24,18 +24,20 @@
 
                   <div class="row mb-3">
                     <form action="/inboxuser" method="GET" id="eventFilterForm" class="col-sm-12">
-                      <label for="eventName" class="col-sm-2 col-form-label">Pick Event</label>
-                      <div class="col-sm-10">
-                          <select id="eventSelect" name="event_id" class="form-select" aria-label="Default select example"
-                          onchange="document.getElementById('eventFilterForm').submit()">
-                            <option value="" disabled selected>Open this select menu</option>
-                            @foreach($events as $e)
-                              <option value="{{ $e->id }}" {{ request()->get('event_id') == $e->id ? 'selected' : '' }}>{{ $e->name }}</option>
-                            @endforeach
-                          </select>
-                      </div>
+                        <label for="eventSelect" class="col-sm-2 col-form-label">Pick Event</label>
+                        <div class="col-sm-10">
+                            <select id="eventSelect" name="event_id" class="form-select" aria-label="Default select example"
+                                    onchange="document.getElementById('eventFilterForm').submit()">
+                                <option value="" disabled {{ request()->get('event_id') ? '' : 'selected' }}>Open this select menu</option>
+                                @foreach($events as $e)
+                                    <option value="{{ $e->id }}" {{ request()->get('event_id') == $e->id ? 'selected' : '' }}>
+                                        {{ $e->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
                     </form>
-                  </div>
+                </div>
                   @if($transactions->contains('negotiation', '!=', null))
                   @foreach($transactions as $t)
                     @if($t->negotiation)
