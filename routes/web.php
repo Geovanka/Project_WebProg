@@ -29,7 +29,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // PROFILE PAGE =================================================================================================================================================================================================================================
-Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
 
 // EVENT FORM =================================================================================================================================================================================================================================
 Route::post('/eventform', [ProfileController::class, 'addevent']);

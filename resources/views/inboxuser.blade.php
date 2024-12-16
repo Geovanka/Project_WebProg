@@ -26,14 +26,12 @@
                     <form action="/inboxuser" method="GET" id="eventFilterForm" class="col-sm-12">
                       <label for="eventName" class="col-sm-2 col-form-label">Pick Event</label>
                       <div class="col-sm-10">
-                          <select id="eventSelect" name="event_id" class="form-control" aria-label="Default select example"
+                          <select id="eventSelect" name="event_id" class="form-select" aria-label="Default select example"
                           onchange="document.getElementById('eventFilterForm').submit()">
-                          <option value="" disabled selected>Open this select menu</option>
-                              @foreach($events as $e)
-                              <option value="{{ $e->id }}" {{ request('event_id') == $e->id ? 'selected' : '' }}>
-                                {{ $e->name }}
-                              </option>
-                              @endforeach
+                            <option value="" disabled selected>Open this select menu</option>
+                            @foreach($events as $e)
+                              <option value="{{ $e->id }}" {{ request()->get('event_id') == $e->id ? 'selected' : '' }}>{{ $e->name }}</option>
+                            @endforeach
                           </select>
                       </div>
                     </form>

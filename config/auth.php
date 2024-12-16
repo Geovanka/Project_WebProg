@@ -74,11 +74,13 @@ return [
     'providers' => [
         'sponsors' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\Sponsor::class),
+            // 'model' => env('AUTH_MODEL', App\Models\Sponsor::class),
+            'model' => App\Models\Sponsor::class,
         ],
         'users' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            // 'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => App\Models\User::class,
         ],
         'admins' => [
             'driver' => 'eloquent',

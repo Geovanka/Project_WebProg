@@ -12,6 +12,11 @@ class SponsorPageController extends Controller
         return view('sponsor', compact('sponsor'));
     }
 
+    public function sponsorprofile($id){
+        $sponsor = Sponsor::findOrFail($id);
+        return view('sponsorprofile', compact('sponsor'));
+    }
+
     // public function userData(Request $request){
     public function userData($id){
 

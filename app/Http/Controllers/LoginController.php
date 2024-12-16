@@ -37,18 +37,22 @@ class LoginController extends Controller
             $sponsor = Sponsor::where('email', $request->email)->first();
 
             if ($sponsor){
+                // dd('Sponsor found');
                 if(Hash::check($request->password, $sponsor->password)){
                     Auth::guard('sponsor')->login($sponsor);
                     // Auth::login($sponsor);
-                    return redirect()->intended('home');
+                    // return redirect()->intended('home');
+                    return redirect()->intended('inbox');
                 }
             } else {
                 $user = User::where('email', $request->email)->first();
 
                 if ($user){
+                    // dd('User found');
                     if(Hash::check($request->password, $user->password)){
                         Auth::guard('user')->login($user);
                         // Auth::login($user);
+                        // dd(Auth::guard('user')->check(), Auth::guard('sponsor')->check());
                         return redirect()->intended('home');
                     }
                 }
