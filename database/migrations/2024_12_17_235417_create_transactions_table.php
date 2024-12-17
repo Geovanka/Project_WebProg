@@ -21,8 +21,9 @@ return new class extends Migration
             $table->foreign('sponsor_id')->references('id')->on('sponsors')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+
             $table->string('status');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
             $table->text('negotiation')->nullable();
             $table->timestamps();
         });

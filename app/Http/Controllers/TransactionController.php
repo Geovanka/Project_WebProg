@@ -8,14 +8,25 @@ use App\Models\User;
 
 class TransactionController extends Controller
 {
+
+    public function index(){
+        $transactions = Transaction::where('sponsor_id', auth()->id())->get();
+        return view('transaction.index', compact('transactions'));
+    }
+
     public function store(Request $request){
-        // $request->validate([
-        //     'proposal' => 'required|file|mimes:pdf|max:2048',
-        //     'sponsor_id' => 'required|integer',
-        //     'user_id' => 'required|integer',
-        //     'event_id' => 'required|integer',
-        // ]);
-        $proposalPath = $request->file('file_path')->store('files', 'public');
+
+        $validatedData = $request->validate([
+            'file_path' => 'required|file|mimes:pdf|max:2048', // Ensure file is a PDF and within size limit
+            'sponsor_id' => 'required|integer|exists:sponsors,id', // Ensure sponsor_id exists in sponsors table
+            'user_id' => 'required|integer|exists:users,id', // Ensure user_id exists in users table
+            'event_id' => 'required|integer|exists:events,id', // Ensure event_id exists in events table
+        ]);
+
+        $fileName = 'proposal_' . uniqid() . '.' . $request->file('file_path')->extension();
+        $proposalPath = $request->file('file_path')->storeAs('files', $fileName, 'public');
+
+        // $proposalPath = $request->file('file_path')->store('files', 'public');
 
         Transaction::create([
             'sponsor_id' => $request->sponsor_id,
@@ -25,12 +36,7 @@ class TransactionController extends Controller
             'file_path' => $proposalPath, // Save the file path
         ]);
 
-        return redirect('/inbox')->with('success', 'Proposal uploaded successfully!');
-    }
-
-    public function index(){
-        $transactions = Transaction::where('sponsor_id', auth()->id())->get();
-        return view('transaction.index', compact('transactions'));
+        return redirect()->route('sent')->with('success', 'Proposal uploaded successfully!');
     }
 
     public function accept($id){

@@ -14,6 +14,8 @@ class Event extends Model
         'description',
         'date',
         'location',
+        'created_at',
+        'updated_at'
     ];
 
     public function user()

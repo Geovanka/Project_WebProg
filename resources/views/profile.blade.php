@@ -47,7 +47,7 @@
               Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat.</p> -->
           </div>
-        </div> 
+        </div>
       </div>
 
       <a href="/showeventform" aria-label="Add Event"
@@ -55,9 +55,9 @@
           <small>Add Event</small>
       </a>
     </div>
-    
-    
+
+
   </main>
-  
+
   <x-footer/>
 </x-layout>

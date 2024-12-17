@@ -74,15 +74,4 @@ class LoginController extends Controller
             return redirect()->route('landing');
         }
     }
-
-    public function createAdmin(){
-
-        // Create a new admin and hash the password before saving it
-        $admin = new Admin();
-        $admin->email = 'admin@sponstore.com';
-        $admin->password = Hash::make('admin123'); // Hash the password
-        $admin->save();
-
-        return redirect()->route('admin.dashboard')->with('success', 'Admin created successfully');
-    }
 }

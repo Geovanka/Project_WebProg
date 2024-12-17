@@ -29,7 +29,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // PROFILE PAGE =================================================================================================================================================================================================================================
-Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');
 Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
 
 // EVENT FORM =================================================================================================================================================================================================================================
@@ -61,17 +61,10 @@ Route::get('/showsponsorform', function(){
 });;
 
 // INDIVIDUAL SPONSOR + SUBMISSIOON =================================================================================================================================================================================================================================
-// Route::get('/company/{id}', [SponsorPageController::class, 'show'])->name('sponsor.show');
-// Route::get('/submission', function(){
-//     return view('submission');
-// });
-// Route::get('/submission/{sponsor_id}', [TransactionController::class, 'store'])->name('transaction.store');
-
-// Route::get('/submission/{id}', [SponsorPageController::class, 'userData'])->name('submission.show');
 Route::get('/sponsor/{id}', [SponsorPageController::class, 'show'])->name('show.sponsor');
 Route::get('/submission/{sponsor}', [SponsorPageController::class, 'userData'])->name('submission.show');
-Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 
+Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 Route::post('/transactions/{id}/accept', [TransactionController::class, 'accept'])->name('transactions.accept');

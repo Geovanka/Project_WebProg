@@ -12,10 +12,10 @@ class ProfileController extends Controller
 {
     //
 
-    public function profile(Request $request){
+    public function profile($userId){
 
-        // $user = auth()->guard('user')->user();
-        $user = auth()->user();
+        $user = User::findOrFail($userId);
+
         $events = $user?->events;
 
         return view('profile', [

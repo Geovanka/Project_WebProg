@@ -12,14 +12,16 @@ class Sponsor extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
         'description',
-        'image'
+        'image',
+        'created_at',
+        'updated_at'
     ];
 
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password'
     ];
 
     public function transactions()

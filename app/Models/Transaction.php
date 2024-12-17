@@ -14,6 +14,9 @@ class Transaction extends Model
         'event_id',
         'status',
         'file_path',
+        'negotiation',
+        'created_at',
+        'updated_at'
     ];
 
     public function sponsor()
