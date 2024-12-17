@@ -2,7 +2,7 @@
 
     <div class="d-flex flex-row align-items-left">
         <span class="back">&lt;</span>
-        <a href="/profile" class="backs">back</a>
+        <a href="{{route('home')}}" class="backs">back</a>
     </div>
 
     <div class="d-flex flex-column align-items-center gap-4">
@@ -26,21 +26,21 @@
                     <div class="row mb-3">
                         <label for="eventDate" class="col-sm-2 col-form-label">Event Date (D-Day)</label>
                         <div class="col-sm-10">
-                            <input type="text" id="eventDate" class="form-control" placeholder="Event Date" readonly>
+                            <input type="text" id="eventDate" class="form-control" placeholder="Event Date" readonly disabled>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="eventDescription" class="col-sm-2 col-form-label">Event Description</label>
                         <div class="col-sm-10">
-                            <textarea id="eventDescription" class="form-control" rows="5" placeholder="Event Description"></textarea>
+                            <textarea id="eventDescription" class="form-control" rows="5" placeholder="Event Description" readonly disabled></textarea>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label for="eventLocation" class="col-sm-2 col-form-label">Event Location {{$sponsor_id}}</label>
+                        <label for="eventLocation" class="col-sm-2 col-form-label">Event Location</label>
                         <div class="col-sm-10">
-                            <textarea id="eventLocation" class="form-control" rows="3" placeholder="Event Location"></textarea>
+                            <textarea id="eventLocation" class="form-control" rows="3" placeholder="Event Location" readonly disabled></textarea>
                         </div>
                     </div>
 

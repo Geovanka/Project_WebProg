@@ -56,6 +56,13 @@
                     </div>
 
                     <div class="row mb-3">
+                        <label for="phoneNum" class="col-sm-2 col-form-label">Sponsor Phone Number</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name="phoneNum" value="{{old('email', $sponsor->phoneNum)}}" placeholder="Sponsor phone number">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
                         <label for="description" class="col-sm-2 col-form-label">Sponsor Description</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" id="sponsorDescription" name="description" rows="5" placeholder="Enter sponsor description" required>{{old('description', $sponsor->description)}}</textarea>

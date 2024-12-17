@@ -17,19 +17,20 @@ class SponsorSeeder extends Seeder
     public function run(): void
     {
         //
-        $faker = Faker::create();
-        $imagePath = 'sponsors/' . $faker->unique()->word . '.jpg';
-        $imageContent = $faker->image(null, 400, 300, 'business', true, true, 'sponsor');
-        Storage::disk('public')->put($imagePath, file_get_contents($imageContent));
 
-        for ($i=0; $i < 16; $i++) {
+        for ($i=0; $i < 15; $i++) {
             # code...
+            $faker = Faker::create();
+            $imagePath = 'sponsors/' . $faker->unique()->word . '.jpg';
+            $imageContent = $faker->image(null, 400, 300, 'business', true, true, 'sponsor');
+            Storage::disk('public')->put($imagePath, file_get_contents($imageContent));
             DB::table('sponsors')->insert([
                 'name' => $faker->company,
                 'email' => $faker->unique()->companyEmail,
                 'email_verified_at' => now(),
                 'password' => bcrypt('11111111'),
                 'description' => $faker->paragraph,
+                'phoneNum' => $faker->phoneNumber(),
                 'image'=> $imagePath,
                 'created_at' => now(),
                 'updated_at' => now()

@@ -47,8 +47,8 @@ class ProfileController extends Controller
                 'date' => $eventDate,
                 'location' => $validated['location']
             ]);
-        }
+        };
 
-        return redirect()->route('profile');
+        return redirect()->route('profile', $user);
     }
 }

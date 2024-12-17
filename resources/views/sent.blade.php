@@ -50,7 +50,7 @@
                                                 <div class="media-heading">
                                                     {{-- belom selesai --}}
                                                 @if($t->sponsor)
-                                                    <a href="{{route('profile', $t->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
+                                                    <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
                                                 @else
                                                     <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
                                                 @endif

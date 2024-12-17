@@ -31,6 +31,7 @@
                             <h5 class="card-title">{{ $s->name }}</h5>
                             <p class="card-text">{{ $s->description }}</p>
                             <p class="card-text">{{ $s->email }}</p>
+                            <p class="card-text">{{ $s->phoneNum }}</p>
                             <a href="{{ route('admin.edit', $s->id)}}" class="btn btn-primary edit-button" style="color: white;" data-id="{{ $s->id }}">Edit</a>
                             <form action="{{ route('admin.delete', $s->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this sponsor?');">
                                 @csrf

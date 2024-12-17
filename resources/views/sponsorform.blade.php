@@ -57,6 +57,12 @@
                             <textarea class="form-control" id="sponsorDescription" name="description" rows="5" placeholder="Enter sponsor description" required></textarea>
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label for="sponsorPhoneNum" class="col-sm-2 col-form-label">Sponsor Phone Number</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="sponsorDescription" name="phoneNum" rows="5" placeholder="Enter sponsor phone number" required></textarea>
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Sponsor</button>
                 </form>

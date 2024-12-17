@@ -24,7 +24,8 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'password' => 'required|min:8',
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'phoneNum' => 'required|min:8'
         ]);
 
         if ($validatedData->fails()){
