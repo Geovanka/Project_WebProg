@@ -13,14 +13,14 @@
         </a>
 
         <ul class="navbar-nav mb-2 mb-lg-0 list-group list-group-horizontal">
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
                 @if (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/home') }}" aria-label="Homepage">
                         Home
                     </a>
                 @endif
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('profile') || (Auth::guard('sponsor')->check() && request()->is('sponsorprofile/*')) ? 'active' : '' }}">
                 @if (Auth::guard('sponsor')->check())
                     @if (auth()->guard('sponsor')->check())
                         <a class="nav-link" href="{{ route('sponsorprofile', auth()->guard('sponsor')->id()) }}">Profile</a>
@@ -31,7 +31,7 @@
                     </a>
                 @endif
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('inbox') || request()->is('inboxuser') ? 'active' : '' }}">
                 @if (Auth::guard('sponsor')->check())
                     <a class="nav-link" href="{{ url('/inbox') }}" aria-label="A system message page">
                         Inbox
@@ -42,7 +42,7 @@
                     </a>
                 @endif
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('sent') ? 'active' : '' }}">
                 @if (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/sent') }}" aria-label="A system message page">
                         Sent

@@ -2,6 +2,13 @@
   <x-navbar/>
 
   <main>
+  @if(session('errorMessage'))
+    <div class="alert alert-danger">
+        <strong>Error!</strong> {{ session('errorMessage') }}
+    </div>
+  @else
+      <!-- Your normal page content goes here -->
+  
     <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
       <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
@@ -406,7 +413,7 @@
       </div>
 
     </div>
-
+  @endif
   </main>
 
   <x-footer/>

@@ -17,3 +17,7 @@ button {
 button i{
     color: white;
 }
+
+.navbar-nav .nav-item.active .nav-link {
+    border-bottom: 2px white solid;
+}
