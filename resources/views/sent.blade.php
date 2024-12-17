@@ -69,7 +69,7 @@
                                                     <!-- <i class="zmdi zmdi-attachment-alt"></i> -->
                                                 </small>
                                                 </div>
-                                                <p class="msg" style="color: white;">{{$t->event->name}}</p>
+                                                <p class="msg" style="color: white;">{{$t->event->name}} user_ID: {{$t->user_id}} nama: {{$t->user->name}}, logged in id: {{auth()->id()}}</p>
                                                 <p class="msg" style="color: white;">{{$t->negotiation}}</p>
                                                 <br>
                                                 </div>

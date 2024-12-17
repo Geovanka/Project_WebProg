@@ -53,15 +53,14 @@ class InboxController extends Controller
             $query->where('event_id', $request->event_id);
         }
 
-        // $userId = Auth::id();
-        // $query->whereHas('event', function ($q) use ($userId) {
-        //     $q->where('user_id', $userId);
-        // });
-        $transactions = $query->get();
-        // $userId = Auth::id();
         $userId = auth()->id();
+        $query->whereHas('event', function ($q) use ($userId) {
+            $q->where('user_id', $userId);
+        });
+
+        $transactions = $query->get();
         $events = Event::where('user_id', $userId)->get();
-        // dd($transactions->toArray());
+
         return view('inboxuser', compact('transactions', 'events'));
     }
 
@@ -74,15 +73,14 @@ class InboxController extends Controller
             $query->where('event_id', $request->event_id);
         }
 
-        // $userId = Auth::id();
-        // $query->whereHas('event', function ($q) use ($userId) {
-        //     $q->where('user_id', $userId);
-        // });
-        $transactions = $query->get();
-        // $userId = Auth::id();
         $userId = auth()->id();
+        $query->whereHas('event', function ($q) use ($userId) {
+            $q->where('user_id', $userId);
+        });
+
+        $transactions = $query->get();
         $events = Event::where('user_id', $userId)->get();
-        // dd($transactions->toArray());
+        
         return view('sent', compact('transactions', 'events'));
     }
 

@@ -14,7 +14,7 @@
 
         <ul class="navbar-nav mb-2 mb-lg-0 list-group list-group-horizontal">
             <li class="nav-item">
-                @if (Auth::guard('user')->check())
+                @if (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/home') }}" aria-label="Homepage">
                         Home
                     </a>
@@ -25,7 +25,7 @@
                     @if (auth()->guard('sponsor')->check())
                         <a class="nav-link" href="{{ route('sponsorprofile', auth()->guard('sponsor')->id()) }}">Profile</a>
                     @endif
-                @elseif (Auth::guard('user')->check())
+                @elseif (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/profile') }}" aria-label="A sample content page">
                         Profile
                     </a>
@@ -36,14 +36,14 @@
                     <a class="nav-link" href="{{ url('/inbox') }}" aria-label="A system message page">
                         Inbox
                     </a>
-                @elseif (Auth::guard('user')->check())
+                @elseif (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/inboxuser') }}" aria-label="A system message page">
                         Inbox
                     </a>
                 @endif
             </li>
             <li class="nav-item">
-                @if (Auth::guard('user')->check())
+                @if (Auth::guard()->check())
                     <a class="nav-link" href="{{ url('/sent') }}" aria-label="A system message page">
                         Sent
                     </a>
@@ -55,10 +55,10 @@
                         <!-- Hello, {{Auth::guard('sponsor')->user()->name}}, ID {{Auth::guard('sponsor')->user()->id}} -->
                         Hello, {{Auth::guard('sponsor')->user()->name}}
                     </a>
-                @elseif (Auth::guard('user')->check())
+                @elseif (Auth::guard()->check())
                     <a class="nav-link" style="font-weight: 700; color: aquamarine" aria-label="A system message page">
-                        <!-- Hi, {{Auth::guard('user')->user()->name}}, ID {{Auth::guard('user')->user()->id}} -->
-                        Hi, {{Auth::guard('user')->user()->name}}
+                        <!-- Hi, {{Auth::guard()->user()->name}}, ID {{Auth::guard()->user()->id}} -->
+                        Hi, {{Auth::guard()->user()->name}} {{Auth::guard()->user()->id}} {{auth()->id()}}
                     </a>
                 @else
                     <p class="nav-link" style="font-weight: 555; color:aliceblue" aria-label="A system message page">Welcome to our page!</p>
@@ -101,7 +101,7 @@
             </div>
         </form>
 
-        @if (Auth::guard('sponsor')->check() || Auth::guard('user')->check())
+        @if (Auth::guard('sponsor')->check() || Auth::guard()->check())
             <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" style="color: red; border-radius: 15px;" aria-label="Download this template" class="btn btn-outline-light">

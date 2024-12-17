@@ -50,7 +50,7 @@ class LoginController extends Controller
                 if ($user){
                     // dd('User found');
                     if(Hash::check($request->password, $user->password)){
-                        Auth::guard('user')->login($user);
+                        Auth::guard()->login($user);
                         // Auth::login($user);
                         // dd(Auth::guard('user')->check(), Auth::guard('sponsor')->check());
                         return redirect()->intended('home');
@@ -66,8 +66,8 @@ class LoginController extends Controller
         if(Auth::guard('sponsor')->check()){
             Auth::guard('sponsor')->logout();
             return redirect()->route('landing');
-        } else if (Auth::guard('user')->check()){
-            Auth::guard('user')->logout();
+        } else if (Auth::guard()->check()){
+            Auth::guard()->logout();
             return redirect()->route('landing');
         } else if (Auth::guard('admin')->check()){
             Auth::guard('admin')->logout();
