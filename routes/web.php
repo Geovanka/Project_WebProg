@@ -8,6 +8,7 @@ use App\Http\Controllers\SponsorPageController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\ErrorController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -76,3 +77,11 @@ Route::get('/organization/transactions', [TransactionController::class, 'organiz
 
 // TESTING =================================================================================================================================================================================================================================
 Route::get('/test', [LoginController::class, 'createAdmin']);
+
+// ERROR
+// Route::get('/error', [ErrorController::class, 'error'])->name('error');
+Route::get('/error', function () {
+    return view('error', [
+        'errorMessage' => session('errorMessage', 'An unexpected error occurred.')
+    ]);
+})->name('error.page');
