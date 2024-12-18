@@ -10,25 +10,25 @@
 ## Team Members and Responsibilities
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
-    - **Responsibilities:**
+    - **Responsibilities**:
         - asdadasdad
         - asdasdadas
         - asdsadsaddas
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
-    - **Responsibilities:**
+    - **Responsibilities**:
         - asdadasdad
         - asdasdadas
         - asdsadsaddas
         
 ### 3. **Shanna Carlynda Fernlie** (NIM: 2602077843)
-    - **Responsibilities:**
+    - **Responsibilities**:
         - asdadasdad
         - asdasdadas
         - asdsadsaddas
         
 ### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
-    - **Responsibilities:**
+    - **Responsibilities**:
         - asdadasdad
         - asdasdadas
         - asdsadsaddas
