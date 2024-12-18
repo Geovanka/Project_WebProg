@@ -54,7 +54,7 @@
                     <div class="row mb-3">
                         <label for="sponsorPhoneNum" class="col-sm-2 col-form-label">Sponsor Phone Number</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="sponsorDescription" name="phoneNum" rows="5" placeholder="Enter sponsor phone number" required></input>
+                            <input class="form-control" type="text" id="sponsorPhoneNum" name="phoneNum" placeholder="Enter sponsor phone number" required>
                         </div>
                     </div>
                     <div class="row mb-3">

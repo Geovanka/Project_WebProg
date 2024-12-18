@@ -41,13 +41,13 @@ class TransactionController extends Controller
 
     public function accept($id){
         $transaction = Transaction::findOrFail($id);
-        $transaction->update(['status' => 'accepted']);
+        $transaction->update(['status' => 'accepted', 'updated_at' => now()]);
         return redirect()->back()->with('success', 'Proposal accepted.');
     }
 
     public function reject($id){
         $transaction = Transaction::findOrFail($id);
-        $transaction->update(['status' => 'rejected']);
+        $transaction->update(['status' => 'rejected', 'updated_at' => now()]);
         return redirect()->back()->with('error', 'Proposal rejected.');
     }
 
@@ -55,7 +55,7 @@ class TransactionController extends Controller
         // dd($request->negotiation);
         $transaction = Transaction::findOrFail($id);
         $transaction->negotiation = $request->negotiation;
-        $transaction->update(['status' => 'negotiated']);
+        $transaction->update(['status' => 'negotiated', 'updated_at' => now()]);
         $transaction->save();
         return redirect()->back();
     }

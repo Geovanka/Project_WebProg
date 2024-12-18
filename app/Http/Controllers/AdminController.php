@@ -12,7 +12,7 @@ class AdminController extends Controller
     //
     public function admin(){
 
-        $sponsor = Sponsor::paginate(12);
+        $sponsor = Sponsor::orderBy('created_at', 'desc')->paginate(12);
         return view('admin', [
             'sponsor' => $sponsor
         ]);
@@ -24,25 +24,22 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:sponsors,email',
             'password' => 'required|min:8',
-            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048',
-            'phoneNum' => 'required|min:8'
+            'phoneNum' => 'required|min:8',
+            'description' => 'required|string',
+            'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         if ($validatedData->fails()){
             return redirect()->back()->withErrors($validatedData)->withInput();
         }
 
-        if ($request->hasFile('image')){
-            $imagePath = $request->file('image')->store('/sponsors', 'public');
-        } else {
-            $imagePath = null;
-        }
-
+        $imagePath = $request->file('image')->store('/sponsors', 'public');
         Sponsor::create([
             'name' => $request->name,
             'description' => $request->description,
             'password' => bcrypt($request->password),
             'email' => $request->email,
+            'phoneNum' => $request->phoneNum,
             'image'=> $imagePath,
             'email_verified_at' => now()
         ]);
@@ -64,11 +61,14 @@ class AdminController extends Controller
             'email' => 'required|email',
             'description' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'phoneNum' => 'required|min:8'
         ]);
 
         $sponsor->name = $request->name;
         $sponsor->email = $request->email;
         $sponsor->description = $request->description;
+        $sponsor->phoneNum = $request->phoneNum;
+
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('sponsors', 'public');
             $sponsor->image = $imagePath;

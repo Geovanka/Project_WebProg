@@ -65,8 +65,7 @@
                                                     <span class="badge bg-warning text-light">Negotiated</span>
                                                 @endif
                                                 <small class="float-right text-muted">
-                                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->created_at}}</time>
-                                                    <!-- <i class="zmdi zmdi-attachment-alt"></i> -->
+                                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
                                                 </small>
                                                 </div>
                                                 <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>

@@ -40,14 +40,13 @@
 
                   @if($transactions->contains('negotiation', '!=', null))
                   @foreach($transactions as $t)
-                    @if($t->negotiation)
+                    @if($t->negotiation || $t->status === 'accepted' || $t->status === 'rejected')
                     <div class="col-12">
                       <ul class="mail_list list-group list-unstyled">
                         <li class="list-group-item unread" style="background: none; border-left: 1px solid gray;">
                             <div class="media" style="background: none;">
                             <div class="media-body">
                                 <div class="media-heading">
-                                    {{-- belom selesai --}}
                                 @if($t->sponsor)
                                     <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
                                 @else
@@ -64,12 +63,18 @@
                                     <span class="badge bg-warning text-light">Negotiated</span>
                                 @endif
                                 <small class="float-right text-muted">
-                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->created_at}}</time>
+                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
                                     <!-- <i class="zmdi zmdi-attachment-alt"></i> -->
                                 </small>
                                 </div>
                                 <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>
-                                <p class="msg" style="color: white;">Negotiation: {{$t->negotiation}}</p>
+                                @if ($t->negotiation)
+                                    <p class="msg" style="color: white;">Negotiation: {{$t->negotiation}}</p>
+                                @endif
+                                @if ($t->status === 'accepted')
+                                    <p class="msg" style="color: rgb(88, 206, 52);">Your Proposal has been accepted, please continue by contacting the following information</p>
+                                    <p class="msg" style="color: rgba(217, 255, 0, 0.658);">{{$t->sponsor->name}} Phone Number: {{$t->sponsor->phoneNum}}</p>
+                                @endif
                                 <br>
                                 </div>
                             </div>

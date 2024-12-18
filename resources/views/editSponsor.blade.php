@@ -33,7 +33,7 @@
                     <div class="row mb-3">
                         <label for="sponsorName" class="col-sm-2 col-form-label">Upload Brand Image</label>
                         <div class="col-sm-10">
-                            <input class="form-control" name="image" type="file" id="sponsorName" placeholder="Enter Event Name" required>
+                            <input class="form-control" name="image" type="file" id="sponsorName" placeholder="Enter Event Name" value="{{old('image', $sponsor->image)}}">
                             @if ($sponsor->image)
                                 <img src="{{asset('storage/'.$sponsor->image)}}" alt="Current Sponsor Image" style="max-width: 100%; margin-top: 10px;">
                             @endif
@@ -58,7 +58,7 @@
                     <div class="row mb-3">
                         <label for="phoneNum" class="col-sm-2 col-form-label">Sponsor Phone Number</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" name="phoneNum" value="{{old('email', $sponsor->phoneNum)}}" placeholder="Sponsor phone number">
+                            <input class="form-control" type="text" name="phoneNum" value="{{old('phoneNum', $sponsor->phoneNum)}}" placeholder="Sponsor phone number">
                         </div>
                     </div>
 

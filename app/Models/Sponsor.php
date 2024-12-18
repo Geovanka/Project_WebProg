@@ -16,7 +16,7 @@ class Sponsor extends Authenticatable
         'password',
         'description',
         'image',
-        'phone',
+        'phoneNum',
         'created_at',
         'updated_at'
     ];

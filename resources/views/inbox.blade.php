@@ -39,7 +39,7 @@
                                 <span class="badge bg-warning text-light">Negotiated</span>
                             @endif
                             <small class="text-muted">
-                                <time class="hidden-sm-down" style="color: white; margin-left: 20px;" datetime="2017">{{$t->created_at}}</time>
+                                <time class="hidden-sm-down" style="color: white; margin-left: 20px;" datetime="2017">{{$t->updated_at}}</time>
                                 <i class="zmdi zmdi-attachment-alt"></i>
                             </small>
                             </div>

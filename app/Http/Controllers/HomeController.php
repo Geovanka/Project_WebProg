@@ -10,18 +10,8 @@ class HomeController extends Controller
     //
     public function index(){
 
-        $sponsor = Sponsor::all();
+        $sponsor = Sponsor::orderBy('name', 'asc')->get();
 
-        // $sponsorsInPairs = $sponsors->chunk(2);
-
-        // dd($company);
-        // return view('home', [
-        //     'company' => $company
-        // ]);
-
-        // return view('home', [
-        //     'sponsor' => $sponsor->chunk(2),
-        // ]);
         return view('home', [
             'sponsor' => $sponsor
         ]);
@@ -33,7 +23,7 @@ class HomeController extends Controller
         $sponsor = Sponsor::where('name', 'like', '%' . $query . '%')
                             ->orWhere('email', 'like', '%' . $query . '%')
                             ->get();
-        
+
         return view('searchResult', compact('sponsor'));
     }
 }

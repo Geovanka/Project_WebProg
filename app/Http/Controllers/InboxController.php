@@ -29,20 +29,10 @@ class InboxController extends Controller
             $q->where('sponsor_id', $sponsorId);
         });
 
-        $transactions = $query->paginate(10);
+        $transactions = $query->orderBy('updated_at', 'desc')->paginate(10);
 
         return view('inbox', compact('search', 'transactions'));
     }
-
-    // public function inbox(Request $request){
-    //     $userId = auth()->guard('sponsor')->id();
-
-    //     $events = Transaction::where('sponsor_id', $userId)->get();
-
-    //     return view('inbox', [
-    //         'transactions' => $events
-    //     ]);
-    // }
 
     public function inboxuser(Request $request){
 
@@ -58,7 +48,7 @@ class InboxController extends Controller
             $q->where('user_id', $userId);
         });
 
-        $transactions = $query->get();
+        $transactions = $query->orderBy('updated_at', 'desc')->get();
         $events = Event::where('user_id', $userId)->get();
 
         return view('inboxuser', compact('transactions', 'events'));
@@ -78,18 +68,10 @@ class InboxController extends Controller
             $q->where('user_id', $userId);
         });
 
-        $transactions = $query->get();
+        $transactions = $query->orderBy('updated_at', 'desc')->get();
         $events = Event::where('user_id', $userId)->get();
-        
+
         return view('sent', compact('transactions', 'events'));
     }
 
-    // public function inboxuser(Request $request)
-    // {
-    //     $userId = auth()->id();
-    //     $events = Transaction::where('user_id', $userId)->get();
-    //     return view('inbox', [
-    //         'transactions' => $events
-    //     ]);
-    // }
 }
