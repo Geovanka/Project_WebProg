@@ -1,5 +1,5 @@
 <x-layout>
-    
+<link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
     <div class="d-flex justify-content-between align-items-center">
         <h3 class="admintitle">ADMIN DASHBOARD</h3>
 
@@ -33,22 +33,67 @@
                             <p class="card-text">{{ $s->email }}</p>
                             <p class="card-text">{{ $s->phoneNum }}</p>
                             <a href="{{ route('admin.edit', $s->id)}}" class="btn btn-primary edit-button" style="color: white;" data-id="{{ $s->id }}">Edit</a>
-                            <form action="{{ route('admin.delete', $s->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this sponsor?');">
+
+                            <form id="deleteForm{{ $s->id }}" method="POST" style="display: inline-block;">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" style="color: red;">Delete</button>
+                                <!-- @method('DELETE') -->
+                                <button type="button" class="btn" style="color: red;" data-bs-toggle="modal" data-bs-target="#confirmationModal{{ $s->id }}">Delete</button>
                             </form>
-                            {{-- <script>
-                                function confirmAndHide(button, message) {
-                                    if (confirm(message)) {
-                                        button.closest('form').parentElement.querySelectorAll('form').forEach(form => {
-                                        form.style.display = 'none';
+
+                            <div class="modal fade" id="confirmationModal{{ $s->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p id="confirmationText{{ $s->id }}">Are you sure you want to delete this sponsor?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <form action="{{ route('admin.delete', $s->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#successModal">Yes, Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="successModal" aria-labelledby="successModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="successModalLabel">Sponsor Deleted</h5>
+                                        </div>
+                                        <div class="modal-body" id="successMessage">
+                                            Sponsor successfully deleted.
+                                        </div>
+                                        <div class="modal-footer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    // Attach event listeners to all delete buttons
+                                    document.querySelectorAll('[id^="confirmDeleteBtn"]').forEach(button => {
+                                        button.addEventListener('click', function () {
+                                            const sponsorId = this.id.replace('confirmDeleteBtn', ''); // Extract ID from button
+                                            const confirmationText = document.getElementById('confirmationText');
+                                            const deleteForm = document.getElementById(`deleteForm${sponsorId}`);
+
+                                            // Change text to indicate processing
+                                            confirmationText.innerHTML = 'Processing...';
+
+                                            // Submit the form
+                                            deleteForm.submit();
+                                        });
                                     });
-                                        return true;
-                                    }
-                                    return false;
-                                }
-                            </script> --}}
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -59,5 +104,30 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{ session('success') }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show modal if a success message exists
+        @if (session('success'))
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        @endif
+    </script>
 
 </x-layout>
