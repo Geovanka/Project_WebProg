@@ -27,7 +27,7 @@
      - Managing the database structure for sponsors, proposals, and events.
      - Creating API endpoints for front-end integration.
         
-### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690])
+### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
    - **Responsibilities**: 
      - Designing and implementing the website's back-end architecture using Laravel 11.
      - Managing the database structure for sponsors, proposals, and events.
@@ -35,7 +35,9 @@
 
 ## About Sponstore
 
-Sponstore is an innovative platform designed to streamline the process of finding and managing sponsors for student organizations’ events or activities. With features for sponsor database management, organized proposal submissions, and efficient communication systems, Sponstore empowers students to build stronger connections with potential sponsors, ensuring the success of their events.
+Sponstore is an innovative platform designed to simplify the process for student organizations to find and collaborate with sponsors for their events and activities. With integrated features, Sponstore streamlines sponsorship proposal submissions, communication, and management, making the process more efficient and transparent.
+
+Sponstore aligns with Sustainable Development Goal (SDG) 17: Partnerships for the Goals, by connecting student organizations with potential sponsors to foster mutually beneficial collaborations. This platform strengthens strategic partnerships that contribute to the sustainability of positive initiatives within campus communities and beyond.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
