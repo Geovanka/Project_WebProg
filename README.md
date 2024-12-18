@@ -1,13 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/Geovanka/Project_WebProg/blob/main/SponstoreLogo.jpeg?raw=true" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-
+# Documentation
 
 ## Team Members and Responsibilities
 
@@ -66,17 +59,32 @@ The Entity Relationship Diagram (ERD) below illustrates the structure of the dat
 ### 1. Create Account
 Users can create an account by providing essential information such as their organization name, email address, and password. After successful registration, users will be able to log in to the platform and access various features, including event creation and sponsorship proposal management.
 
+![Create Account Screenshot](https://github.com/Geovanka/Project_WebProg/blob/main/createacc.jpeg?raw=true)
+
 ### 2. Login Account
 Once an account has been created, users can log in using their registered email address and password. After logging in, they will be redirected to their **Dashboard** or **Home Page**, where they can manage events and sponsorship proposals.
 
+![Login Screenshot](https://github.com/Geovanka/Project_WebProg/blob/main/login.jpeg?raw=true)
+
 ### 3. Profile Page
-The **Profile Page** displays the user’s (organization’s) details and past events. This page includes:
+The **Profile Page** provides details for both student organizations and sponsors:
+#### For Student Organizations (Users):
 - **Organization Name**: The name of the student organization.
-- **Email**: The email address associated with the user’s account.
-- **Event Name**: The names of events the organization has created.
-- **Event Date**: The dates of the events listed.
+- **Email**: The email address of the user.
+- **Event Name**: The names of events created by the user.
+- **Event Date**: The scheduled date for each event.
 - **Event Description**: Descriptions of the events.
-- **Event Location**: The locations where events are held.
+- **Event Location**: The location where the events will take place.
+
+![Profile Page1](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/profilepage.jpeg?raw=true)
+
+#### For Sponsors:
+- **Sponsor Name**: The name of the sponsor.
+- **Email**: The contact email of the sponsor.
+- **Image**: A logo or representative image of the sponsor.
+- **Short Description**: A brief overview of the sponsor's interests or sponsorship preferences.
+
+![Profile Page2](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/profilepage2.jpeg?raw=true)
 
 ### 4. Add Event
 On the **Add Event** page, users can create a new event by filling out a simple form with the following fields:
@@ -85,6 +93,8 @@ On the **Add Event** page, users can create a new event by filling out a simple 
 - **Event Description**: A brief description of the event.
 - **Event Location**: The location where the event will take place.
 
+![Add Event](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/addevent.jpeg?raw=true)
+
 ### 5. Home Page
 The **Home Page** is where users can:
 - **View List of Sponsors**: Browse through a list of available sponsors.
@@ -92,11 +102,19 @@ The **Home Page** is where users can:
   - The proposal form includes fields such as **Event Name**, **Event Date**, **Event Description**, and **Location**.
   - The user can submit the proposal directly to the selected sponsor from this page.
 
+![Home Page1](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/home1.jpeg?raw=true)
+![Home Page2](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/home2.jpeg?raw=true)
+![Home Page3](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/home3.jpeg?raw=true)
+![Home Page3_5](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/home3_5.jpeg?raw=true)
+![Home Page4](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/home4.jpeg?raw=true)
+
 ### 6. Sent Page
 The **Sent Page** allows users to view the list of sponsorship proposals they have submitted. On this page, users can see:
 - The **status** of each proposal (Accepted, Rejected, or On Check).
 - The **Event Name** and **Date** associated with each proposal.
 - **Status Update**: Users can track which proposals have been accepted, rejected, or are still under review.
+
+![Sent Page](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/sent.jpeg?raw=true)
 
 ### 7. Inbox Page
 The **Inbox Page** displays proposals that have been sent to sponsors and allows sponsors to interact with these proposals. The features include:
@@ -105,13 +123,21 @@ The **Inbox Page** displays proposals that have been sent to sponsors and allows
   - **Accept**: If the proposal is approved, it will be marked as accepted.
   - **Reject**: If the proposal is declined, it will be marked as rejected.
   - **Negotiate**: If the sponsor wants to negotiate, they can provide notes for the organization, which are displayed in the user’s **Inbox**.
+  
+![Inbox Page1](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/inbox1.jpeg?raw=true)
+
 - **Negotiation Notes**: If the sponsor selects the **Negotiate** option, they can leave notes that will be visible to the user. The user can view the status and negotiation notes on the **Inbox Page**.
+
+![Inbox Page2](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/inbox2.jpeg?raw=true)
 
 ### 8. Admin Page
 The **Admin Page** is designed for administrators to manage the sponsor list and maintain the platform:
 - **Add Sponsor**: Admins can add new sponsors to the database with relevant details such as the sponsor name, contact information, and sponsorship categories.
 - **Edit Sponsor Details**: Admins can update the details of existing sponsors, such as changing their contact information or sponsorship preferences.
 - **Delete Sponsor**: Admins can remove sponsors from the list of available sponsors if they are no longer active or if their details need to be updated.
+
+![Admin Page](https://github.com/Geovanka/Project_WebProg/blob/main/public/assets/images/admin.jpeg?raw=true)
+
 
 
 ## Main Features Description
