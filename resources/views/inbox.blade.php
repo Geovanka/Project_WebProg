@@ -155,9 +155,7 @@
                         </div>
                     </li>
                   @endforeach
-                  <nav aria-label="Page navigation example">
-                      {{ $transactions->links('pagination::bootstrap-5') }}
-                  </nav>
+                  
                 @endif
               </ul>
 
