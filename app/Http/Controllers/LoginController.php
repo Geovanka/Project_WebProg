@@ -58,18 +58,24 @@ class LoginController extends Controller
                 }
             }
         }
-        return redirect()->back()->with('error', '* Invalid email or password...');
+        return redirect()->back()->with('error', '* Invalid email or password...')->withInput()->with('redirect', session()->forget('url.intended'));
     }
 
     public function logout()
     {
         if(Auth::guard('sponsor')->check()){
+            $user = Auth::guard('sponsor')->user();
+            $user->touch();
             Auth::guard('sponsor')->logout();
             return redirect()->route('landing');
         } else if (Auth::guard()->check()){
+            $user = Auth::guard()->user();
+            $user->touch();
             Auth::guard()->logout();
             return redirect()->route('landing');
         } else if (Auth::guard('admin')->check()){
+            $user = Auth::guard('admin')->user();
+            $user->touch();
             Auth::guard('admin')->logout();
             return redirect()->route('landing');
         }

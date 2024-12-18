@@ -14,7 +14,7 @@ class ProfileController extends Controller
 
     public function profile($userId){
 
-        $user = User::findOrFail($userId);
+        $user = User::orderBy('created_at', 'desc')->findOrFail($userId);
 
         $events = $user?->events;
 

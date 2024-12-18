@@ -9,8 +9,8 @@
       <br><br><br><br>
       <section class="content inbox">
         <nav class="searchnavbar navbar-dark">
-          <form class="form-inline d-flex flex-row">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-right: 20px;">
+          <form class="form-inline d-flex flex-row" >
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" style="margin-right: 20px;">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </nav>
@@ -38,7 +38,7 @@
                 <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
                   <!-- start of inbox -->
 
-                  @if($transactions->contains('negotiation', '!=', null))
+                  @if($transactions->contains('negotiation', '!=', null) || $transactions->contains('status', '==', 'accepted') || $transactions->contains('status', '==', 'rejected') )
                   @foreach($transactions as $t)
                     @if($t->negotiation || $t->status === 'accepted' || $t->status === 'rejected')
                     <div class="col-12">
@@ -73,7 +73,7 @@
                                 @endif
                                 @if ($t->status === 'accepted')
                                     <p class="msg" style="color: rgb(88, 206, 52);">Your Proposal has been accepted, please continue by contacting the following information</p>
-                                    <p class="msg" style="color: rgba(217, 255, 0, 0.658);">{{$t->sponsor->name}} Phone Number: {{$t->sponsor->phoneNum}}</p>
+                                    <p class="msg" style="color: rgb(251, 255, 0);">{{$t->sponsor->name}} Phone Number: {{$t->sponsor->phoneNum}}</p>
                                 @endif
                                 <br>
                                 </div>
@@ -85,7 +85,7 @@
                     @endif
                   @endforeach
                   @else
-                    <span>No transaction from Sponsor</span>
+                    <span>No transactions found...</span>
                   @endif
                 </div>
               </div>

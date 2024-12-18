@@ -2,12 +2,27 @@
 
     <div class="d-flex flex-row align-items-left">
         <span class="back">&lt;</span>
-        <a href="{{route('home')}}" class="backs">back</a>
+        <a href="{{ url()->previous()}}" class="backs">Back</a>
     </div>
 
     <div class="d-flex flex-column align-items-center gap-4">
         <h3 class="desc">Submit your proposal!</h3>
         <div class="cards">
+            @if ($errors->any())
+                <div class="alert alert-danger" style="color: #ED4337;">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <!-- Display flash error message -->
+            @if(session('error'))
+                <div class="alert alert-danger" style="color: #ED4337;">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="card-body">
                 <form action="/transaction" method="POST" enctype="multipart/form-data">
                 @csrf

@@ -23,7 +23,8 @@ class RegisterController extends Controller
         $validatedData = Validator::make($request->all(), [
             'email' => 'required|email|max:255',
             'name' => 'required|string|max:255',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'check'=>'required'
         ]);
 
         if ($validatedData->fails()){

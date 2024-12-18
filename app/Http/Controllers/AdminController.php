@@ -12,7 +12,7 @@ class AdminController extends Controller
     //
     public function admin(){
 
-        $sponsor = Sponsor::orderBy('created_at', 'desc')->paginate(12);
+        $sponsor = Sponsor::orderBy('updated_at', 'desc')->paginate(12);
         return view('admin', [
             'sponsor' => $sponsor
         ]);
