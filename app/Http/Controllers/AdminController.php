@@ -12,7 +12,7 @@ class AdminController extends Controller
     //
     public function admin(){
 
-        $sponsor = Sponsor::paginate(10);
+        $sponsor = Sponsor::paginate(12);
         return view('admin', [
             'sponsor' => $sponsor
         ]);
@@ -22,7 +22,7 @@ class AdminController extends Controller
 
         $validatedData = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:sponsors,email',
             'password' => 'required|min:8',
             'image' => 'required|image|file|mimes:jpeg,png,jpg,gif|max:2048',
             'phoneNum' => 'required|min:8'

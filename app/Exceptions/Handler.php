@@ -39,7 +39,15 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof SomeSpecificException) {
             // Handle specific exceptions
-            return response()->view('errors.error', ['errorMessage' => $exception->getMessage()]);
+            return response()->view('error', ['errorMessage' => $exception->getMessage()]);
+        }
+
+        if ($this->isHttpException($exception)) {
+            return response()->view('error', [], $exception->getStatusCode());
+        }
+
+        if (app()->environment('production')) { // Only in production environment
+            return response()->view('errors', ['exception' => $exception], 500);
         }
 
         return parent::render($request, $exception);

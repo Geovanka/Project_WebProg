@@ -12,7 +12,7 @@
                         <p class="lead text-secondary">
                             {{ $errorMessage ?? 'An unexpected error occurred.' }}
                         </p>
-                        <a href="/home" class="btn btn-light" style="padding: 13px 25px;">Go Home</a>
+                        <a href="{{route('home')}}" class="btn btn-light" style="padding: 13px 25px;">Go To Home Page</a>
                     </div>
                 </div>
             </div>

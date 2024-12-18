@@ -11,7 +11,7 @@
 
                 <div class="col-12 col-lg-7 text-center">
                   <img class="img-fluid rounded-5 mb-n5 shadow" src="{{asset('storage/'. $sponsor->image)}}" width="512" height="512"
-                    alt="a nice person" loading="lazy" data-aos="zoom-in-right">
+                    alt="Sponsor Image" loading="lazy" data-aos="zoom-in-right">
                     <br><br><br>
                 </div>
 

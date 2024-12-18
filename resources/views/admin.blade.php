@@ -1,5 +1,5 @@
 <x-layout>
-    
+
     <div class="d-flex justify-content-between align-items-center">
         <h3 class="admintitle">ADMIN DASHBOARD</h3>
 
@@ -29,9 +29,10 @@
                         style="width:100%; height:300px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                         <div class="card-body" style="padding: 20px 15px; font-size: 13px; height: 260px;">
                             <h5 class="card-title">{{ $s->name }}</h5>
-                            <p class="card-text">{{ $s->description }}</p>
-                            <p class="card-text">{{ $s->email }}</p>
-                            <p class="card-text">{{ $s->phoneNum }}</p>
+                            <p class="card-text">{{ \Illuminate\Support\Str::limit($s->description, 100, '...') }}</p>
+                            <p class="card-text">Email: {{ $s->email }}</p>
+                            <p class="card-text">Phone: {{ $s->phoneNum }}</p>
+                            <p class="card-text">Created: {{ $s->created_at }} Updated: {{ $s->updated_at }}</p>
                             <a href="{{ route('admin.edit', $s->id)}}" class="btn btn-primary edit-button" style="color: white;" data-id="{{ $s->id }}">Edit</a>
                             <form action="{{ route('admin.delete', $s->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this sponsor?');">
                                 @csrf
