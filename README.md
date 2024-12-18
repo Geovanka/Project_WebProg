@@ -31,9 +31,9 @@
         
 ### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
    - **Responsibilities**: 
-     - Designing and implementing the website's back-end architecture using Laravel 11.
-     - Managing the database structure for sponsors, proposals, and events.
-     - Creating API endpoints for front-end integration.
+     - **Search Bar**: Implement search bars on the navbar and in Inbox/Sent sections to search sponsors, events, or users.
+     - **Proposal Status**: Add options for proposal status (Accepted, Rejected, Negotiated) and ensure users can track changes.
+     - **Documentation**: Create a comprehensive README.md file to document the features, setup, and usage of the system. 
 
 
 
@@ -63,8 +63,55 @@ The Entity Relationship Diagram (ERD) below illustrates the structure of the dat
 
 ## Website Layout, Structure, and Functions
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Create Account
+Users can create an account by providing essential information such as their organization name, email address, and password. After successful registration, users will be able to log in to the platform and access various features, including event creation and sponsorship proposal management.
 
+### 2. Login Account
+Once an account has been created, users can log in using their registered email address and password. After logging in, they will be redirected to their **Dashboard** or **Home Page**, where they can manage events and sponsorship proposals.
+
+### 3. Profile Page
+The **Profile Page** displays the user’s (organization’s) details and past events. This page includes:
+- **Organization Name**: The name of the student organization.
+- **Email**: The email address associated with the user’s account.
+- **Event Name**: The names of events the organization has created.
+- **Event Date**: The dates of the events listed.
+- **Event Description**: Descriptions of the events.
+- **Event Location**: The locations where events are held.
+
+### 4. Add Event
+On the **Add Event** page, users can create a new event by filling out a simple form with the following fields:
+- **Event Name**: The title of the event.
+- **Event Date**: The date of the event.
+- **Event Description**: A brief description of the event.
+- **Event Location**: The location where the event will take place.
+
+### 5. Home Page
+The **Home Page** is where users can:
+- **View List of Sponsors**: Browse through a list of available sponsors.
+- **Submit Sponsorship Proposals**: Users can select a sponsor from the list, fill out a proposal form, and attach the proposal document.
+  - The proposal form includes fields such as **Event Name**, **Event Date**, **Event Description**, and **Location**.
+  - The user can submit the proposal directly to the selected sponsor from this page.
+
+### 6. Sent Page
+The **Sent Page** allows users to view the list of sponsorship proposals they have submitted. On this page, users can see:
+- The **status** of each proposal (Accepted, Rejected, or On Check).
+- The **Event Name** and **Date** associated with each proposal.
+- **Status Update**: Users can track which proposals have been accepted, rejected, or are still under review.
+
+### 7. Inbox Page
+The **Inbox Page** displays proposals that have been sent to sponsors and allows sponsors to interact with these proposals. The features include:
+- **View Proposal**: Sponsors can open and review the details of the proposals submitted to them.
+- **Accept/Reject/Negotiate**: Sponsors can take action on proposals:
+  - **Accept**: If the proposal is approved, it will be marked as accepted.
+  - **Reject**: If the proposal is declined, it will be marked as rejected.
+  - **Negotiate**: If the sponsor wants to negotiate, they can provide notes for the organization, which are displayed in the user’s **Inbox**.
+- **Negotiation Notes**: If the sponsor selects the **Negotiate** option, they can leave notes that will be visible to the user. The user can view the status and negotiation notes on the **Inbox Page**.
+
+### 8. Admin Page
+The **Admin Page** is designed for administrators to manage the sponsor list and maintain the platform:
+- **Add Sponsor**: Admins can add new sponsors to the database with relevant details such as the sponsor name, contact information, and sponsorship categories.
+- **Edit Sponsor Details**: Admins can update the details of existing sponsors, such as changing their contact information or sponsorship preferences.
+- **Delete Sponsor**: Admins can remove sponsors from the list of available sponsors if they are no longer active or if their details need to be updated.
 
 
 ## Main Features Description
