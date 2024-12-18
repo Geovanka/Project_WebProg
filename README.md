@@ -9,7 +9,7 @@
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sponstore is an innovative platform designed to streamline the process of finding and managing sponsors for student organizations’ events or activities. With features for sponsor database management, organized proposal submissions, and efficient communication systems, Sponstore empowers students to build stronger connections with potential sponsors, ensuring the success of their events.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
