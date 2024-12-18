@@ -10,25 +10,24 @@
 ## Team Members and Responsibilities
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
-    - **Responsibilities**:
-        - asdadasdad
-        - asdasdadas
-        - asdsadsaddas
+   - **Responsibilities**: 
+     - Designing and implementing the website's back-end architecture using Laravel 11.
+     - Managing the database structure for sponsors, proposals, and events.
+     - Creating API endpoints for front-end integration.
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
-    - **Responsibilities**:
-        - asdadasdad
-        - asdasdadas
-        - asdsadsaddas
+   - **Responsibilities**: 
+     - Designing and implementing the website's back-end architecture using Laravel 11.
+     - Managing the database structure for sponsors, proposals, and events.
+     - Creating API endpoints for front-end integration.
         
 ### 3. **Shanna Carlynda Fernlie** (NIM: 2602077843)
-    - **Responsibilities**:
-        - asdadasdad
-        - asdasdadas
-        - asdsadsaddas
+   - **Responsibilities**: 
+     - Designing and implementing the website's back-end architecture using Laravel 11.
+     - Managing the database structure for sponsors, proposals, and events.
+     - Creating API endpoints for front-end integration.
         
-### 1. **Vincentius Axelle Tanoto** (NIM: [Insert NIM])
-   - **Role**: Project Manager, Back-End Developer
+### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690])
    - **Responsibilities**: 
      - Designing and implementing the website's back-end architecture using Laravel 11.
      - Managing the database structure for sponsors, proposals, and events.
