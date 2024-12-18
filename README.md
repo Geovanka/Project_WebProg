@@ -7,6 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
 ## Team Members and Responsibilities
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
@@ -33,36 +34,25 @@
      - Managing the database structure for sponsors, proposals, and events.
      - Creating API endpoints for front-end integration.
 
+
 ## About Sponstore
 
 Sponstore is an innovative platform designed to simplify the process for student organizations to find and collaborate with sponsors for their events and activities. With integrated features, Sponstore streamlines sponsorship proposal submissions, communication, and management, making the process more efficient and transparent.
 
 Sponstore aligns with Sustainable Development Goal (SDG) 17: Partnerships for the Goals, by connecting student organizations with potential sponsors to foster mutually beneficial collaborations. This platform strengthens strategic partnerships that contribute to the sustainability of positive initiatives within campus communities and beyond.
 
+
 ## Deployment
 
 You can access the deployed website here:
+
 [Sponstore Website](www.youtube.com)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Entity Relationship Diagram (ERD)
 
-### Premium Partners
+The Entity Relationship Diagram (ERD) below illustrates the structure of the database used by Sponstore, highlighting the relationships between the entities.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
 ## Contributing
 
