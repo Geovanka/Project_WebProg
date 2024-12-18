@@ -53,6 +53,7 @@ You can access the deployed website here:
 
 The Entity Relationship Diagram (ERD) below illustrates the structure of the database used by Sponstore, highlighting the relationships between the entities.
 
+![ERD](https://github.com/Geovanka/Project_WebProg/blob/main/ERD_Sponstore.png?raw=true)
 
 ## Contributing
 
