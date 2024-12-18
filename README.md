@@ -27,11 +27,12 @@
         - asdasdadas
         - asdsadsaddas
         
-### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
-    - **Responsibilities**:
-        - asdadasdad
-        - asdasdadas
-        - asdsadsaddas
+### 1. **Vincentius Axelle Tanoto** (NIM: [Insert NIM])
+   - **Role**: Project Manager, Back-End Developer
+   - **Responsibilities**: 
+     - Designing and implementing the website's back-end architecture using Laravel 11.
+     - Managing the database structure for sponsors, proposals, and events.
+     - Creating API endpoints for front-end integration.
 
 ## About Sponstore
 
