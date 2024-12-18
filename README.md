@@ -7,6 +7,32 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Team Members and Responsibilities
+
+### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
+    - **Responsibilities:**
+        - asdadasdad
+        - asdasdadas
+        - asdsadsaddas
+
+### 2. **Kent Christopher Hansel** (NIM: 2602067634)
+    - **Responsibilities:**
+        - asdadasdad
+        - asdasdadas
+        - asdsadsaddas
+        
+### 3. **Shanna Carlynda Fernlie** (NIM: 2602077843)
+    - **Responsibilities:**
+        - asdadasdad
+        - asdasdadas
+        - asdsadsaddas
+        
+### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
+    - **Responsibilities:**
+        - asdadasdad
+        - asdasdadas
+        - asdsadsaddas
+
 ## About Sponstore
 
 Sponstore is an innovative platform designed to streamline the process of finding and managing sponsors for student organizations’ events or activities. With features for sponsor database management, organized proposal submissions, and efficient communication systems, Sponstore empowers students to build stronger connections with potential sponsors, ensuring the success of their events.
