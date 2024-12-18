@@ -61,7 +61,7 @@
                 <div class="col-12">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" name="email" placeholder="email@mail.com" class="form-control form-control-lg bg-gray-800 border-dark reglogbar" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{old('email')}}">
+                  <input type="email" name="email" placeholder="Email@mail.com" class="form-control form-control-lg bg-gray-800 border-dark reglogbar" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{old('email')}}">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
