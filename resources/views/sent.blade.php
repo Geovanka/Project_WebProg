@@ -84,30 +84,15 @@
                                 </div>
                             @endif
                         @endforeach
+                        <nav aria-label="Page navigation example">
+                            {{ $transactions->links('pagination::bootstrap-5') }}
+                        </nav>
                     @endif
                 </div>
               </div>
               <br><br>
               </ul>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Previous</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">3</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+              
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ class InboxController extends Controller
             $q->where('sponsor_id', $sponsorId);
         });
 
-        $transactions = $query->orderBy('updated_at', 'desc')->paginate(10);
+        $transactions = $query->orderBy('updated_at', 'desc')->paginate(3);
 
         return view('inbox', compact('search', 'transactions'));
     }
@@ -48,7 +48,7 @@ class InboxController extends Controller
             $q->where('user_id', $userId);
         });
 
-        $transactions = $query->orderBy('updated_at', 'desc')->get();
+        $transactions = $query->orderBy('updated_at', 'desc')->paginate(3);
         $events = Event::where('user_id', $userId)->get();
 
         return view('inboxuser', compact('transactions', 'events'));
@@ -68,7 +68,7 @@ class InboxController extends Controller
             $q->where('user_id', $userId);
         });
 
-        $transactions = $query->orderBy('updated_at', 'desc')->get();
+        $transactions = $query->orderBy('updated_at', 'desc')->paginate(3);
         $events = Event::where('user_id', $userId)->get();
 
         return view('sent', compact('transactions', 'events'));
