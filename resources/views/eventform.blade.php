@@ -23,7 +23,7 @@
                 </div>
             @endif
             <div class="card-body">
-                <form action="/eventform" method="POST">
+                <form id="eventForm" action="/eventform" method="POST">
                 @csrf
                     <div class="row mb-3">
                         <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
@@ -55,7 +55,17 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('eventForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission (to show alert first)
 
+            // Show an alert
+            alert("Event Added Successfully!");
+
+            // Submit the form after the alert
+            this.submit();
+        });
+    </script>
     <script>
         flatpickr("#eventDate", {
             dateFormat: "m/d/Y",

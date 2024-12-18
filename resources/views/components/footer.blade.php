@@ -18,17 +18,10 @@
           <span class="h6">Company</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
+              <a href="/home" class="link-fancy link-fancy-light">About us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+              <a href="mailto:sponstore@gmail.com" class="link-fancy link-fancy-light">Contact</a>
             </li>
           </ul>
         </div>
@@ -36,48 +29,28 @@
           <span class="h6">Services</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Pricing</a>
+              <a href="/inboxuser" class="link-fancy link-fancy-light">Negotiation</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Products</a>
+              <a href="/sent" class="link-fancy link-fancy-light">Conversation</a>
             </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Customers</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">More</a>
-            </li>
+            
           </ul>
         </div>
         <div class="col">
-          <span class="h6">Support</span>
+          <span class="h6">Interested to partner with us?</span>
           <ul class="nav flex-column">
+            <!-- <span class="h7">Interested to partner with us?</span> -->
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
+              <a href="mailto:sponstore@gmail.com" class="link-fancy link-fancy-light">Email Us!</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
-            </li>
+            
           </ul>
         </div>
       </div>
     </div>
     <div class="container text-center small py-vh-2 border-top border-dark">Made by
-      <a href="https://templatedeck.com" class="link-fancy link-fancy-light" target="_blank">templatedeck.com</a>
-      Distributed by <a href="https://themewagon.com" class="link-fancy link-fancy-light" target="_blank">ThemeWagon</a>
+      <a href="https://www.instagram.com/munchmeplz/" class="link-fancy link-fancy-light" target="_blank">SPONSTORE Group</a>
+      Distributed by <a href="https://www.instagram.com/binusuniversityofficial/" class="link-fancy link-fancy-light" target="_blank">Bina Nusantara University</a>
     </div>
 </footer>

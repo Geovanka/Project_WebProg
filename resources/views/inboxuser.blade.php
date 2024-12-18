@@ -38,77 +38,59 @@
                 <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
                   <!-- start of inbox -->
 
-                  @if($transactions->contains('negotiation', '!=', null) || $transactions->contains('status', '==', 'accepted') || $transactions->contains('status', '==', 'rejected') )
-                  @foreach($transactions as $t)
-                    @if($t->negotiation || $t->status === 'accepted' || $t->status === 'rejected')
-                    <div class="col-12">
-                      <ul class="mail_list list-group list-unstyled">
-                        <li class="list-group-item unread" style="background: none; border-left: 1px solid gray;">
-                            <div class="media" style="background: none;">
-                            <div class="media-body">
-                                <div class="media-heading">
-                                @if($t->sponsor)
-                                    <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
-                                @else
-                                    <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
-                                @endif
+                  @if($transactions->contains('negotiation', '!=', null) || $transactions->contains('status', '==', 'accepted') || $transactions->contains('status', '==', 'rejected'))
+                    @foreach($transactions as $t)
+                      @if($t->negotiation || $t->status === 'accepted' || $t->status === 'rejected')
+                        <div class="col-12">
+                          <ul class="mail_list list-group list-unstyled">
+                            <li class="list-group-item unread" style="background: none; border-left: 1px solid gray;">
+                              <div class="media" style="background: none;">
+                                <div class="media-body">
+                                  <div class="media-heading">
+                                    @if($t->sponsor)
+                                      <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
+                                    @else
+                                      <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
+                                    @endif
 
-                                @if($t->status === 'pending')
-                                    <span class="badge bg-warning text-dark">On check</span>
-                                @elseif($t->status === 'accepted')
-                                    <span class="badge bg-success text-light">Accepted</span>
-                                @elseif($t->status === 'rejected')
-                                    <span class="badge bg-danger text-dark">Rejected</span>
-                                @elseif($t->status === 'negotiated')
-                                    <span class="badge bg-warning text-light">Negotiated</span>
-                                @endif
-                                <small class="float-right text-muted">
-                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
-                                    <!-- <i class="zmdi zmdi-attachment-alt"></i> -->
-                                </small>
-                                </div>
-                                <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>
-                                @if ($t->negotiation)
+                                    @if($t->status === 'pending')
+                                      <span class="badge bg-warning text-dark">On check</span>
+                                    @elseif($t->status === 'accepted')
+                                      <span class="badge bg-success text-light">Accepted</span>
+                                    @elseif($t->status === 'rejected')
+                                      <span class="badge bg-danger text-dark">Rejected</span>
+                                    @elseif($t->status === 'negotiated')
+                                      <span class="badge bg-warning text-light">Negotiated</span>
+                                    @endif
+                                    <small class="float-right text-muted">
+                                      <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
+                                    </small>
+                                  </div>
+                                  <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>
+                                  @if ($t->negotiation)
                                     <p class="msg" style="color: white;">Negotiation: {{$t->negotiation}}</p>
-                                @endif
-                                @if ($t->status === 'accepted')
+                                  @endif
+                                  @if ($t->status === 'accepted')
                                     <p class="msg" style="color: rgb(88, 206, 52);">Your Proposal has been accepted, please continue by contacting the following information</p>
                                     <p class="msg" style="color: rgb(251, 255, 0);">{{$t->sponsor->name}} Phone Number: {{$t->sponsor->phoneNum}}</p>
-                                @endif
-                                <br>
+                                  @endif
                                 </div>
-                            </div>
-                            </div>
-                        </li>
-                      </ul>
-                    </div>
-                    @endif
-                  @endforeach
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      @endif
+                    @endforeach
+
+
                   @else
                     <span>No transactions found...</span>
                   @endif
+                  
                 </div>
               </div>
               </ul>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Previous</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">3</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+              
             </div>
           </div>
         </div>

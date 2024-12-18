@@ -40,74 +40,60 @@
                     @if($transactions->isEmpty())
                         <span>No proposal sent...</span>
                     @else
-                        @foreach($transactions as $t)
-                            @if($t->negotiation === null)
-                                <div class="col-12">
-                                    <ul class="mail_list list-group list-unstyled">
-                                        <li class="list-group-item unread" style="background: none; border-left: 1px solid gray;">
-                                            <div class="media" style="background: none;">
-                                            <div class="media-body">
-                                                <div class="media-heading">
-                                                    {{-- belom selesai --}}
-                                                @if($t->sponsor)
-                                                    <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
-                                                @else
-                                                    <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
-                                                @endif
+                    @foreach($transactions as $t)
+                      @if($t->negotiation === null)
+                          <div class="col-12">
+                              <ul class="mail_list list-group list-unstyled">
+                                  <li class="list-group-item unread" style="background: none; border-left: 1px solid gray;">
+                                      <div class="media" style="background: none;">
+                                          <div class="media-body">
+                                              <div class="media-heading">
+                                                  {{-- belom selesai --}}
+                                                  @if($t->sponsor)
+                                                      <a href="{{route('show.sponsor', $t->sponsor->id)}}" class="m-r-10 text-light">{{ $t->sponsor->name }}</a>
+                                                  @else
+                                                      <a href="{{route('home')}}" class="m-r-10 text-light">No Sponsor</a>
+                                                  @endif
 
-                                                @if($t->status === 'pending')
-                                                    <span class="badge bg-warning text-dark">On check</span>
-                                                @elseif($t->status === 'accepted')
-                                                    <span class="badge bg-success text-light">Accepted</span>
-                                                @elseif($t->status === 'rejected')
-                                                    <span class="badge bg-danger text-dark">Rejected</span>
-                                                @elseif($t->status === 'negotiated')
-                                                    <span class="badge bg-warning text-light">Negotiated</span>
-                                                @endif
-                                                <small class="float-right text-muted">
-                                                    <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
-                                                </small>
-                                                </div>
-                                                <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>
-                                                <p class="msg" style="color: white;">{{$t->negotiation}}</p>
-                                                <br>
-                                                </div>
-                                                <div class="btn-group mt-2">
-                                                    <a href="{{ asset('storage/' . $t->file_path) }}" class="btn btn-outline-light" target="_blank">
-                                                        <small>View Proposal</small>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            @endif
-                        @endforeach
+                                                  @if($t->status === 'pending')
+                                                      <span class="badge bg-warning text-dark">On check</span>
+                                                  @elseif($t->status === 'accepted')
+                                                      <span class="badge bg-success text-light">Accepted</span>
+                                                  @elseif($t->status === 'rejected')
+                                                      <span class="badge bg-danger text-dark">Rejected</span>
+                                                  @elseif($t->status === 'negotiated')
+                                                      <span class="badge bg-warning text-light">Negotiated</span>
+                                                  @endif
+
+                                                  <small class="float-right text-muted">
+                                                      <time class="hidden-sm-down" style="background: none; color: white;" datetime="2017">{{$t->updated_at}}</time>
+                                                  </small>
+                                              </div>
+
+                                              <p class="msg" style="color: white;">Event: {{$t->event->name}}</p>
+                                              <p class="msg" style="color: white;">{{$t->negotiation}}</p>
+                                              <br>
+                                          </div>
+
+                                          <div class="btn-group mt-2">
+                                              <a href="{{ asset('storage/' . $t->file_path) }}" class="btn btn-outline-light" target="_blank">
+                                                  <small>View Proposal</small>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      @endif
+                  @endforeach
+
+                        
                     @endif
                 </div>
               </div>
               <br><br>
               </ul>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Previous</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">3</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link bg-dark text-light border-light" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+              
             </div>
           </div>
         </div>

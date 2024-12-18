@@ -1,7 +1,7 @@
 <x-layout>
     <div class="d-flex flex-row align-items-left">
         <span class="back">&lt;</span>
-        <a href="{{ url()->previous()}}" class="backs">Back</a>
+        <a href="/admin" class="backs">Back</a>
     </div>
 
     <div class="d-flex flex-column align-items-center gap-4">
@@ -25,7 +25,7 @@
 
         <div class="cards">
             <div class="card-body">
-                <form action="/sponsorform" method="POST" enctype="multipart/form-data">
+                <form id="sponsorForm" action="/sponsorform" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="row mb-3">
                         <label for="sponsorName" class="col-sm-2 col-form-label">Upload Brand Image</label>
@@ -67,6 +67,17 @@
                     <button type="submit" class="btn btn-white btn-l mb-4" style="font-size:15px;">Add Sponsor</button>
                 </form>
             </div>
+            <script>
+                document.getElementById('sponsorForm').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent form submission (to show alert first)
+
+                    // Show an alert
+                    alert("Sponsor Added Successfully!");
+
+                    // Submit the form after the alert
+                    this.submit();
+                });
+            </script>
         </div>
     </div>
 </x-layout>
