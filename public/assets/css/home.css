@@ -103,3 +103,11 @@ input::placeholder, textarea::placeholder {
 .reglogbar{
     background-color: white;
 }
+
+.pagination span svg{
+    display: none;
+}
+
+.pagination .z-0{
+    display: none;
+}

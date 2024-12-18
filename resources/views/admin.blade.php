@@ -1,5 +1,5 @@
 <x-layout>
-
+    
     <div class="d-flex justify-content-between align-items-center">
         <h3 class="admintitle">ADMIN DASHBOARD</h3>
 
