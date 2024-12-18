@@ -11,7 +11,7 @@
         <div class="container-fluid">
           <nav class="searchnavbar navbar-dark">
             <form class="form-inline d-flex flex-row">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-right: 20px;">
+              <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search" style="margin-right: 20px;">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </nav>
@@ -38,7 +38,7 @@
                         </form>
                     </div>
                     @if($transactions->isEmpty())
-                        <span>No proposal sent to sponsor</span>
+                        <span>No proposal sent...</span>
                     @else
                         @foreach($transactions as $t)
                             @if($t->negotiation === null)

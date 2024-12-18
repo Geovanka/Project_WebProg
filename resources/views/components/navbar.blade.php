@@ -92,14 +92,16 @@
             </li>
         </ul>
 
-        <form action="/search" class="d-flex me-3" role="search">
-            <div class="input-group" style="display: flex; align-items: center; border-right: none; border-radius: 5px 0 0 5px;">
-                <input name="search" class="form-control" style="border-radius: 0;" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" style="border-radius: 0;" type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-        </form>
+        @if (Auth::guard()->check() && request()->is('home'))
+            <form action="/search" class="d-flex me-3" role="search">
+                <div class="input-group" style="display: flex; align-items: center; border-right: none; border-radius: 5px 0 0 5px;">
+                    <input name="search" class="form-control" style="border-radius: 0;" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn" style="border-radius: 0;" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        @endif
 
         @if (Auth::guard('sponsor')->check() || Auth::guard()->check())
             <form action="{{route('logout')}}" method="POST">

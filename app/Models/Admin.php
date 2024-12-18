@@ -21,4 +21,9 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
 }

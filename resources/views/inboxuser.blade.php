@@ -85,7 +85,7 @@
                     @endif
                   @endforeach
                   @else
-                  <span>No transactions found...</span>
+                    <span>No transactions found...</span>
                   @endif
                   <nav aria-label="Page navigation example">
                       {{ $transactions->links('pagination::bootstrap-5') }}
