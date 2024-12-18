@@ -94,12 +94,6 @@ input::placeholder, textarea::placeholder {
     border-radius: 10px;
 }
 
-.addSponsor{
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
 .reglogbar{
     background-color: white;
 }

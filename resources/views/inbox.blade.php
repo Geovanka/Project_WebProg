@@ -2,6 +2,7 @@
   <x-navbar />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <main class="mt-5">
     <div class="container text-light">
       <br><br><br>
@@ -59,7 +60,7 @@
                             </a> -->
                             @if($t->status === 'pending')
                                 <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#acceptModal{{ $t->id }}">
-                                <small>Accept</small>
+                                  <small>Accept</small>
                                 </button>
 
                                 <div class="modal fade" id="acceptModal{{ $t->id }}" tabindex="-1" role="dialog" aria-labelledby="acceptModalLabel" aria-hidden="true">
