@@ -76,7 +76,7 @@ User (student organizations) can create events by providing the following detail
 - **Event Date**: The date when the event will take place.
 - **Event Description**: A brief summary of the event, its purpose, and what participants can expect.
 - **Event Location**: The venue or location where the event will occur.
-- 
+
 Once the event details are provided, users can save and submit the event to begin searching for sponsors.
 
 ### 2. Sponsorship Proposal Submission (User - Student Organization)
