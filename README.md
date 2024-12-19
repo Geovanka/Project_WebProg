@@ -6,7 +6,9 @@
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
    - **Responsibilities**: 
-     - 
+     - asdasd
+     - asdasd
+     - asdasd
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
    - **Responsibilities**: 
