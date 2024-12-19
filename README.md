@@ -23,9 +23,13 @@
         
 ### 3. **Shanna Carlynda Fernlie** (NIM: 2602077843)
    - **Responsibilities**: 
-     - Designing and implementing the website's back-end architecture using Laravel 11.
-     - Managing the database structure for sponsors, proposals, and events.
-     - Creating API endpoints for front-end integration.
+     - **Home Page**: Design the structure with featured sponsors, events, and navigation, ensuring responsiveness and usability.
+     - **Sponsor Profile**: Fetch sponsor data, design the UI, and provide proposal template for users.
+     - **Proposal Submission**: Create a form to fetch event data, validate inputs, store submissions, and provide clear feedback.
+     - **Inbox User**: Build a UI to display transactions with filters and search functionality.
+     - **Inbox**: Design a UI to view received proposals with navigation and filters.
+     - **Sent**: Create a UI to view sent proposals with status updates and search options.
+     - **Footer**: Implement a consistent footer with links, social icons, and SDG references.
         
 ### 4. **Vincentius Axelle Tanoto** (NIM: 2602057690)
    - **Responsibilities**: 
