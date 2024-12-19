@@ -17,9 +17,21 @@
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
    - **Responsibilities**: 
-     - Designing and implementing the website's back-end architecture using Laravel 11.
-     - Managing the database structure for sponsors, proposals, and events.
-     - Creating API endpoints for front-end integration.
+     - **ERD**: Designed the architecture of the entity relational database system.
+     - **Migrations**: Created and configured all the table migrations (users, sponsors, events, admins, transactions) with each attribute for the project.
+     - **Model**: Created and configured all the models used in the project (User, Sponsor, Event, Admin, Transaction).
+     - **Seeder**: Created and configured the seeder for admin, and sponsor fakers.
+     - **Authentication**: Handles all login activity, logout activity, and authentication functions of the project.
+     - **Login/Register**: Created login and register view page, implemented authentication functions for account creation and account log in.
+     - **Logout**: Created a log out function to log out logged in user from the website for session management.
+     - **Navbar**: Implemented a personalization for the navbars for each roles and the routes the buttons give. Optimized the routing and redirects of the menu in the navbar.
+     - **Admin**: Implemented addSponsor function to add new sponsor to the database for the user to see, implemented editSponsor to edit existing sponsor details, added a deleteSponsor function to delete the selected existing sponsor from the database. Implemented pagination to navigate through existing sponsors.
+     - **Inbox/Inboxuser/Sent**: Implemented a functional search bar in inbox / inboxuser / sent page for the user to navigate through the page easier. Linked the users and sponsors related to the transaction shown so the other party could view the user/sponsor. Implemented a sort to show the transactions based on the most recent updated time. Implemented if condition for the transactions shown on the inboxuser page based on transaction's status.
+     - **Storage**: Configured the storage settings to store inputted images and files in the file system.
+     - **Error**: Implemented error handling for each validation in every form.
+     - **Middleware**: Implemented middleware based on user role to increase security of the website.
+     - **Routing**: Optimized the routing system, redirects, routing names for better readability and functionality.
+     - **Environment**: Configured the environment settings for deployment purposes.
         
 ### 3. **Shanna Carlynda Fernlie** (NIM: 2602077843)
    - **Responsibilities**: 
