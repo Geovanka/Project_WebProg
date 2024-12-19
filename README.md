@@ -6,9 +6,14 @@
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
    - **Responsibilities**: 
-     - asdasd
-     - asdasd
-     - asdasd
+     - **Profile Page**: Developed and implemented the UI to display the student organization profile and integrated functionality to showcase their events.
+     - **Add Event Feature**: Designed and coded the event submission form and ensured the events dynamically appear on the profile page.
+     - **Inbox User Page**: Built the inbox system and integrated the feature to display sponsor negotiations.
+     - **Sent Page**: Designed and developed a page to track all proposals submitted by student organizations to sponsors.
+     - **Admin Page**: Created a dashboard for admins to view and manage sponsor profiles efficiently.
+     - **Navbar Improvements**: Refactored the navigation bar to enhance visual appeal and usability.
+     - **Home Page Enhancements**: Redesigned and structured the homepage layout to improve aethetics and user experience.
+     - **Sponsor Profile Page**: Developed the UI and backend integration for sponsors to view and manage their profile upon login.
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
    - **Responsibilities**: 
@@ -26,7 +31,9 @@
    - **Responsibilities**: 
      - **Search Bar**: Implement search bars on the navbar and in Inbox/Sent sections to search sponsors, events, or users.
      - **Proposal Status**: Add options for proposal status (Accepted, Rejected, Negotiated) and ensure users can track changes.
-     - **Documentation**: Create a comprehensive README.md file to document the features, setup, and usage of the system. 
+     - **Delete Confirmation Popup**: Implemented a confirmation modal for accept or reject the proposal.
+     - **Error Page Design**: Created and styled an error page to handle unexpected issues, ensuring seamless redirection during errors.
+     - **Documentation**: Create a comprehensive README.md file to document the features, setup, and usage of the system.
 
 
 
