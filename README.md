@@ -6,9 +6,7 @@
 
 ### 1. **Geovanka Thersia Kurniawan** (NIM: 2602123572)
    - **Responsibilities**: 
-     - Designing and implementing the website's back-end architecture using Laravel 11.
-     - Managing the database structure for sponsors, proposals, and events.
-     - Creating API endpoints for front-end integration.
+     - 
 
 ### 2. **Kent Christopher Hansel** (NIM: 2602067634)
    - **Responsibilities**: 
