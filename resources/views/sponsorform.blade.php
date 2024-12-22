@@ -1,7 +1,7 @@
 <x-layout>
     <div class="d-flex flex-row align-items-left">
         <span class="back">&lt;</span>
-        <a href="/admin" class="backs">Back</a>
+        <a href="{{ url()->previous()}}" class="backs">Back</a>
     </div>
 
     <div class="d-flex flex-column align-items-center gap-4">

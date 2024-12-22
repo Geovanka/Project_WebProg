@@ -25,14 +25,14 @@ Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('
 Route::post('/register', [RegisterController::class, 'register']);
 
 // HOME PAGE =================================================================================================================================================================================================================================
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // HOME SEARCH =================================================================================================================================================================================================================================
-Route::get('/search', [HomeController::class, 'search'])->name('search');
+// Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // PROFILE PAGE =================================================================================================================================================================================================================================
 Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('profile');
-Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
+// Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
 
 // SPONSOR DASHBOARD =================================================================================================================================================================================================================================
 Route::get('/sponsor', function(){
@@ -84,6 +84,8 @@ Route::get('/error', function () {
 })->name('error.page');
 
 Route::middleware('is_user')->group(function (){
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/search', [HomeController::class, 'search'])->name('search');
     Route::get('/inboxuser', [InboxController::class, 'inboxuser'])->name('inboxuser');
     Route::get('/sent', [InboxController::class, 'sent'])->name('sent');
 
@@ -91,11 +93,11 @@ Route::middleware('is_user')->group(function (){
     Route::get('/showeventform', function(){
         return view('eventform');
     });
+    Route::get('/submission/{sponsor}', [SponsorPageController::class, 'userData'])->name('submission.show');
 });
 
 Route::middleware('is_sponsor')->group(function (){
-    Route::get('/submission/{sponsor}', [SponsorPageController::class, 'userData'])->name('submission.show');
-
+    Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
     Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');

@@ -12,7 +12,15 @@
                         <p class="lead text-secondary">
                             {{ session('errorMessage') ?? 'An unexpected error occurred.' }}
                         </p>
-                        <a href="{{route('home')}}" class="btn btn-light" style="padding: 13px 25px;">Go To Home Page</a>
+                        @if (Auth::guard('sponsor')->check())
+                            <a href="{{ route('inbox') }}" class="btn btn-light" style="padding: 13px 25px;">Go back</a>
+                        @elseif (Auth::guard('admin')->check())
+                            <a href="{{ route('admin.dashboard') }}" class="btn btn-light" style="padding: 13px 25px;">Go back</a>
+                        @elseif(Auth::guard()->check())
+                            <a href="{{ route('home') }}" class="btn btn-light" style="padding: 13px 25px;">Go back</a>
+                        @else
+                            <a href="{{ route('landing') }}" class="btn btn-light" style="padding: 13px 25px;">Go login</a>
+                        @endif
                     </div>
                 </div>
             </div>
