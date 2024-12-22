@@ -12,14 +12,14 @@
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
-  <title>UKM WebProg Project</title>
+  <title>SPONSTORE</title>
   <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
   <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <!-- Flatpickr JS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  
+
 
   <style>
     /* inter-300 - latin */
@@ -64,7 +64,7 @@
         url('{{ asset('assets/fonts/inter-v12-latin-700.woff') }}') format('woff');
     }
   </style>
-  
+
 
 
 </head>

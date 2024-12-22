@@ -26,36 +26,20 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validatedData)->withInput();
         }
 
-        $admin = Admin::where('email', $request->email)->first();
-
-        if ($admin){
+        if ($admin = Admin::where('email', $request->email)->first()){
             if(Hash::check($request->password, $admin->password)){
                 Auth::guard('admin')->login($admin);
-                return redirect()->intended('admin');
+                return redirect()->route('admin.dashboard');
             }
-        } else {
-            $sponsor = Sponsor::where('email', $request->email)->first();
-
-            if ($sponsor){
-                // dd('Sponsor found');
-                if(Hash::check($request->password, $sponsor->password)){
-                    Auth::guard('sponsor')->login($sponsor);
-                    // Auth::login($sponsor);
-                    // return redirect()->intended('home');
-                    return redirect()->intended('inbox');
-                }
-            } else {
-                $user = User::where('email', $request->email)->first();
-
-                if ($user){
-                    // dd('User found');
-                    if(Hash::check($request->password, $user->password)){
-                        Auth::guard()->login($user);
-                        // Auth::login($user);
-                        // dd(Auth::guard('user')->check(), Auth::guard('sponsor')->check());
-                        return redirect()->intended('home');
-                    }
-                }
+        } else if($sponsor = Sponsor::where('email', $request->email)->first()) {
+            if(Hash::check($request->password, $sponsor->password)){
+                Auth::guard('sponsor')->login($sponsor);
+                return redirect()->route('inbox');
+            }
+        } else if($user = User::where('email', $request->email)->first()) {
+            if(Hash::check($request->password, $user->password)){
+                Auth::guard()->login($user);
+                return redirect()->route('home');
             }
         }
         return redirect()->back()->with('error', '* Invalid email or password...')->withInput()->with('redirect', session()->forget('url.intended'));

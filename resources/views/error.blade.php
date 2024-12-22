@@ -8,9 +8,9 @@
                         <h2 class="display-4">Something went wrong</h2>
                     </div>
                     <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5">
-                        <h2 class="display-huge mb-5 text-danger">Error {{ $statusCode ?? 500 }}</h2>
+                        <h2 class="display-huge mb-5 text-danger">Error {{ session('errorCode') ?? 500 }}</h2>
                         <p class="lead text-secondary">
-                            {{ $errorMessage ?? 'An unexpected error occurred.' }}
+                            {{ session('errorMessage') ?? 'An unexpected error occurred.' }}
                         </p>
                         <a href="{{route('home')}}" class="btn btn-light" style="padding: 13px 25px;">Go To Home Page</a>
                     </div>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class RoleMiddleware
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next, $role = null, $guard = null)
     {
-        if(Auth::guard('admin')->check()){
+        if(Auth::guard()->check() && !Auth::guard('sponsor')->check() && !Auth::guard('admin')->check()){
 
             return $next($request);
         }

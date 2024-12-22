@@ -71,8 +71,8 @@
                                     <p class="msg" style="color: white;">Negotiation: {{$t->negotiation}}</p>
                                   @endif
                                   @if ($t->status === 'accepted')
-                                    <p class="msg" style="color: rgb(88, 206, 52);">Your Proposal has been accepted, please continue by contacting the following information</p>
-                                    <p class="msg" style="color: rgb(251, 255, 0);">{{$t->sponsor->name}} Phone Number: {{$t->sponsor->phoneNum}}</p>
+                                    <p class="msg" style="color: rgb(88, 206, 52);"><strong>Your Proposal has been accepted, please continue by contacting the following information</strong></p>
+                                    <p class="msg" style="color: rgb(251, 255, 0);"> <u><strong>{{$t->sponsor->name}}'s</strong></u>  phone number: <strong>{{$t->sponsor->phoneNum}}</strong></p>
                                   @endif
                                 </div>
                               </div>
@@ -86,11 +86,11 @@
                   @else
                     <span>No transactions found...</span>
                   @endif
-                  
+
                 </div>
               </div>
               </ul>
-              
+
             </div>
           </div>
         </div>

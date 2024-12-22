@@ -92,7 +92,7 @@
             </li>
         </ul>
 
-        @if (Auth::guard()->check() && request()->is('home'))
+        @if (Auth::guard()->check() && (request()->is('home') || request()->is('search')))
             <form action="/search" class="d-flex me-3" role="search">
                 <div class="input-group" style="display: flex; align-items: center; border-right: none; border-radius: 5px 0 0 5px;">
                     <input name="search" class="form-control" style="border-radius: 0;" type="search" placeholder="Search" aria-label="Search">
@@ -101,6 +101,7 @@
                     </button>
                 </div>
             </form>
+        @elseif (Auth::guard()->check() )
         @endif
 
         @if (Auth::guard('sponsor')->check() || Auth::guard()->check())

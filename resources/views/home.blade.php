@@ -8,7 +8,7 @@
     </div>
   @else
       <!-- Your normal page content goes here -->
-  
+
     <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
       <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
@@ -73,7 +73,7 @@
           <div class="col-12 col-md-4 col-lg-3 mb-4">
             <div class="card bg-transparent" data-aos="zoom-in-up" style="height: 630px;">
               <div class="bg-dark shadow rounded-5 p-0 h-100 d-flex flex-column">
-                <img src="{{ asset('storage/'.$s->image) }}" alt="Sponsor's Image"
+                <img src="{{ 'storage/'.$s->image }}" alt="Sponsor's Image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy" style="width: 250px; height: 270px">
                 <div class="flex-grow-1" style="padding: 2.4rem;">
                   <h2 class="fw-lighter multi-line-truncate" style="height: 85px; font-size:23px;">{{ $s->name }}</h2>
@@ -91,82 +91,7 @@
       </div>
     </div>
 
-    <!-- <div class="bg-black py-vh-3">
-      <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-        <div class="row gx-5">
-          <div class="col-12 col-md-4 col-lg-3 mb-4">
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{ asset('assets/images/pocari.jpg') }}" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary"></p>
-                  <p class="h6 fw-5"></p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-4 col-lg-3 mb-4">
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{asset('assets/images/nu.jpeg')}}" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-4 col-lg-3 mb-4">
-            <div class="p-5 pt-0 mt-5" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">Company List</span>
-              <h2 class="display-4">Check out these companies!</h2>
-            </div>
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{asset('assets/images/gojek.jpg')}}" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-4 col-lg-3 mb-4">
-            <div class="card bg-transparent" data-aos="zoom-in-up">
-              <div class="bg-dark shadow rounded-5 p-0">
-                <img src="{{asset('assets/images/traveloka.png')}}" width="582" height="327" alt="abstract image"
-                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-                <div class="p-5">
-                  <h2 class="fw-lighter">Ipsum dolor est</h2>
-                  <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div> -->
-
-    </div>
     
-    
-    
-    
-
     </div>
   @endif
   </main>
