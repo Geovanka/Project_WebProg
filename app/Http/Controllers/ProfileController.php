@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ProfileController extends Controller
 {
@@ -48,6 +49,10 @@ class ProfileController extends Controller
                 'location' => $validated['location']
             ]);
         };
+
+        // Flash success message and log it
+        session()->flash('success', 'Event added successfully!');
+        Log::info('Flash message:', ['success' => session('success')]);
 
         return redirect()->route('profile', $user);
     }

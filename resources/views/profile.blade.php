@@ -6,6 +6,25 @@
         <div class="col-12 col-lg-10 col-xl-8">
           <div class="row">
             <div class="col-12">
+                @if (session('success'))
+                  <div
+                      class="alert alert-success"
+                      style="color: #28a745; background-color: #d4edda; padding: 10px; margin: 10px 0; border: 1px solid #c3e6cb;"
+                      id="successAlert"
+                  >
+                      {{ session('success') }}
+                  </div>
+
+                  <script>
+                    // Hide the success alert after 5 seconds
+                    setTimeout(function() {
+                        var alert = document.getElementById('successAlert');
+                        if (alert) {
+                            alert.style.display = 'none';
+                        }
+                    }, 5000);
+                </script>
+              @endif
               <h1 class="display-3 fw-bold">{{ $user->name }}</h1>
               <p class="profile" data-aos="fade-up">{{ $user->email }}</p>
               <span class="h3 text-secondary fw-lighter">Events</span>
