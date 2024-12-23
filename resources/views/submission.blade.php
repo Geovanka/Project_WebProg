@@ -72,17 +72,7 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('submission').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent form submission (to show alert first)
 
-            // Show an alert
-            alert("Proposal Sent Successfully!");
-
-            // Submit the form after the alert
-            this.submit();
-        });
-    </script>
     <script>
         flatpickr("#eventDate", {
             dateFormat: "m/d/Y",

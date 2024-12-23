@@ -20,6 +20,25 @@
               <ul class="mail_list list-group list-unstyled">
               <div class="col-12 col-lg-10 col-xl-8" style="background: none;">
                 <div class="row d-flex align-items-start" style="background: none;" data-aos="fade-right">
+                    @if (session('success'))
+                        <div
+                            class="alert alert-success"
+                            style="color: #28a745; background-color: #d4edda; padding: 10px; margin: 10px 0; border: 1px solid #c3e6cb;"
+                            id="successAlert"
+                        >
+                            {{ session('success') }}
+                        </div>
+
+                        <script>
+                            // Hide the success alert after 5 seconds
+                            setTimeout(function() {
+                                var alert = document.getElementById('successAlert');
+                                if (alert) {
+                                    alert.style.display = 'none';
+                                }
+                            }, 5000);
+                        </script>
+                    @endif
                   <!-- start of inbox -->
                     <div class="row mb-3">
                         <form action="/sent" method="GET" id="eventFilterForm" class="col-sm-12">
@@ -87,13 +106,13 @@
                       @endif
                   @endforeach
 
-                        
+
                     @endif
                 </div>
               </div>
               <br><br>
               </ul>
-              
+
             </div>
           </div>
         </div>

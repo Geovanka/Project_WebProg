@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\Transaction;
 use App\Models\User;
 
@@ -36,6 +37,8 @@ class TransactionController extends Controller
             'file_path' => $proposalPath, // Save the file path
         ]);
 
+        session()->flash('success', 'Event added successfully!');
+        Log::info('Flash message:', ['success' => session('success')]);
         return redirect()->route('sent')->with('success', 'Proposal uploaded successfully!');
     }
 

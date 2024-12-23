@@ -96,9 +96,9 @@ Route::middleware('is_user')->group(function (){
     Route::get('/submission/{sponsor}', [SponsorPageController::class, 'userData'])->name('submission.show');
 });
 
+Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 Route::middleware('is_sponsor')->group(function (){
     Route::get('/sponsorprofile/{id}', [SponsorPageController::class, 'sponsorprofile'])->name('sponsorprofile');
-    Route::post('/transaction', [TransactionController::class, 'store'])->name('transaction.store');
 
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
     Route::post('/transactions/{id}/accept', [TransactionController::class, 'accept'])->name('transactions.accept');
