@@ -7,20 +7,20 @@
           <div class="row">
             <div class="col-12">
                 @if (session('success'))
-                  <div class="btn-outline-success" id="successAlert">
-                      {{ session('success') }}
-                  </div>
+                    <div class="btn-outline-success" id="successAlert">
+                        {{ session('success') }}
+                    </div>
 
-                  <script>
-                    // Hide the success alert after 5 seconds
-                    // setTimeout(function() {
-                    //     var alert = document.getElementById('successAlert');
-                    //     if (alert) {
-                    //         alert.style.display = 'none';
-                    //     }
-                    // }, 5000);
-                </script>
-              @endif
+                    <script>
+                        // Hide the success alert after 5 seconds
+                        setTimeout(function() {
+                            var alert = document.getElementById('successAlert');
+                            if (alert) {
+                                alert.style.display = 'none';
+                            }
+                        }, 5000);
+                    </script>
+                @endif
               <h1 class="display-3 fw-bold">{{ $user->name }}</h1>
               <p class="profile" data-aos="fade-up">{{ $user->email }}</p>
               <span class="h3 text-secondary fw-lighter">Events</span>
